@@ -1,11 +1,11 @@
 $(document).ready(function() {
-  // $('.tree-container__tree').animate({
-  //   'height': '100vh',
-  //   'width': '50vw'
-  // }, 2000, 'easeOutBounce');
-  $('.tree-container').animate({
-    'height': '100vh',
-    'width': '100vw',
-    'top': '0'
-  }, 2000)
+  setTimeout(bannerAnimation, 1000)
+  $('body').mousemove(function() {
+  })
 });
+
+var bannerAnimation = function() {
+  $('.tree-container').animate({
+    'height': '150vh'
+  }, 2000, 'easeOutBounce')
+}
