@@ -1,15 +1,12 @@
 $(document).ready(function() {
-  $('.tree-container').scrollTop(0);
   $("#tree").on('load', function() {
-    setTimeout(animateTree, 100);
+    animateTree();
+    // setTimeout(animateTree, 2000);
   }).each(function() {
     if (this.complete) $(this).trigger('load');
   });
 })
 var animateTree = function() {
-  $('.tree-container').animate({
-    'scrollTop': '950px'
-  }, 3000, 'easeInQuint', function() {
-
-  })
+  $('.tree-container__tree, #tree--motion-blur').removeClass('animation-paused');
+  // $('.tree-container__tree').animate('width','150vw');
 }
