@@ -6,7 +6,9 @@
 body {
   font: 18px/24px "Roboto", Helvetica, Helvetica Neue, Arial;
   font-weight: 300;
-  overflow: hidden;
+  background: black;
+  color: white;
+  overflow-x: hidden;
 }
 
 header {
@@ -18,7 +20,6 @@ header>img {
   position: relative;
   width: 100%;
   margin: auto;
-  /* bottom: -100%; */
 }
 
 .centered-absolute {
@@ -47,7 +48,6 @@ header>img {
   left: 0;
   top: 0;
   display: flex;
-  display: flex;
   align-items: center;
   justify-content: center;
   width: 100%;
@@ -58,7 +58,6 @@ header>img {
 .navigation__ul {
   display: flex;
   flex-grow: 0.7;
-  /* width: 100%; */
   height: 100%;
 }
 
@@ -91,10 +90,58 @@ header>img {
   font-size: 16px;
   font-weight: 700;
 }
+.box {
+  position: relative;
+  display: inline-block;
+  width: 49%;
+  height: 40%;
+}
+.box h3 {
+  width: 100%;
+  display: inline-block;
+  height: 10%;
+}
+.box div {
+  position: relative;
+  margin: auto;
+  display: block;
+  width: 30%;
+  height: 80%;
+}
+.box--red div {
+  background: #C91115;
+  margin-left: 16vw;
+  margin-top: 4.5vw;
+}
+.box--green div {
+  margin-top: 3vw;
+  margin-left: 15vw;
+  background: #6EA131;
+}
+.box--blue div {
+  margin-top: 2vw;
+  margin-right: 18vw;
+  background: #6360AA;
+}
+.box--light-blue div {
+  margin-top: 2vw;
+  margin-left: 15vw;
+  background: white;
+}
+.box > h2 {
+  text-align: left;
+  width: 100%;
+}
+.box__header:before {
+  content: '+';
+}
 
 .tree-container {
+  -webkit-clip-path: polygon(100% 0, 100% 75%, 50% 88%, 0 75%, 0 0);
+  clip-path: polygon(100% 0, 100% 75%, 50% 88%, 0 75%, 0 0);
   width: 100vw;
   height: 56.2vw;
+  margin-top: 5vw;
   position: relative;
   overflow-y: hidden;
   overflow-x: hidden;
@@ -118,7 +165,7 @@ header>img {
   animation-fill-mode: forwards;
 }
 
-.pan--header {
+.tree-container__header, .section__header {
   text-align: center;
   display: block;
   width: 100vw;
@@ -128,109 +175,151 @@ header>img {
   top: 120vh;
 }
 
+.section.about {
+  position: relative;
+  height: 50vw;
+  padding: 3vw 5vw 3vw 5vw;
+}
+
+.section__header {
+  width: 100%;
+  padding-bottom: 1vw;
+}
+
+.section__paragraph {
+  text-align: center;
+}
+
 .pan-animation--first-header {
   animation-name: pan--first-header;
-  /* top: 81.24vw; */
   top: 21.24vw;
 }
+
 .pan-animation--second-header {
   animation-name: pan--second-header;
   text-align: left;
   left: 5vw;
 }
+
 .pan-animation--third-header {
   animation-name: pan--third-header;
   text-align: left;
   left: 70vw;
 }
+
 .pan-animation--fourth-header {
   animation-name: pan--fourth-header;
   text-align: left;
   left: 5vw;
 }
-@keyframes pan--fourth-header {
+
+@keyframes pan--first-header {
+  0% {}
+  25% {
+    transform: scale(0.5);
+    width: 200vw;
+    top: -47.79vw;
+    left: 0vh;
+  }
+  50% {
+    width: 200vw;
+    top: -67.46vw;
+    left: -150vw;
+  }
+  75% {
+    width: 200vw;
+    top: -89.26vw;
+    left: 0vw;
+  }
+  100% {
+    width: 100vw;
+    top: -51.849vw;
+    left: -0vh;
+  }
+}
+
+@keyframes pan--second-header {
   0% {
-    left: -2vw;
-    top: 100vh;
+    transform: scale(0.5);
+    left: -50vw;
   }
   25% {
-    top: 100vh;
-    /* width: 200vw; */
+    transform: scale(1);
+    top: 25.03vw;
     left: 8vh;
   }
   50% {
-    top: 180vh;
-    /* width: 200vw; */
-    /* top: -78.7vw; */
-    left: -30vw;
+    transform: scale(0.5);
+    width: 200vw;
+    top: -78.7vw;
+    left: -80vw;
   }
   75% {
-    top: 25.03vw;
     width: 200vw;
-    left: 5vw;
-    /* top: -101.2vw;
-    left: -20vw; */
+    top: -101.2vw;
+    left: -20vw;
   }
   100% {
     width: 100vw;
     top: -63.089vw;
-    left: -20vw;
+    left: 0vw;
   }
 }
+
 @keyframes pan--third-header {
   0% {
     left: 100vw;
     top: 100vw;
   }
   25% {
-    /* width: 200vw; */
     top: 81.03vw;
     left: 150vh;
+    transform: scale(0.5);
   }
   50% {
-    /* width: 200vw; */
     top: 25vw;
     left: 5vw;
+    transform: scale(1);
   }
   75% {
-    /* width: 200vw; */
+    transform: scale(0.5);
     top: -101.2vw;
     left: 140vw;
   }
   100% {
-    /* width: 100vw; */
     top: -63.089vw;
     left: 0vw;
   }
 }
 
-@keyframes pan--second-header {
+@keyframes pan--fourth-header {
   0% {
-    /* transform: scale(0.5);
-    transform: scale(1); */
     left: -2vw;
+    top: 120vh;
   }
   25% {
-    /* width: 200vw; */
-    top: 25.03vw;
+    top: 120vh;
     left: 8vh;
   }
   50% {
-    width: 200vw;
-    top: -78.7vw;
-    left: -20vw;
+    top: 180vh;
+    left: -80vw;
+    transform: scale(0.5);
   }
   75% {
+    transform: scale(1);
+    top: 25.03vw;
     width: 200vw;
-    top: -101.2vw;
-    left: -20vw;
+    left: 5vw;
   }
   100% {
+    transform: scale(0.5);
     width: 100vw;
     top: -63.089vw;
-    left: 0vw;
+    left: -100vw;
   }
 }
+
 @keyframes pan {
   0% {}
   25% {
@@ -255,36 +344,10 @@ header>img {
   }
 }
 
-@keyframes pan--first-header {
-  0% {
-  }
-  25% {
-    width: 200vw;
-    top: -47.79vw;
-    left: 0vh;
-  }
-  50% {
-    width: 200vw;
-    top: -67.46vw;
-    left: -150vw;
-  }
-  75% {
-    width: 200vw;
-    top: -89.26vw;
-    left: 0vw;
-  }
-  100% {
-    width: 100vw;
-    top: -51.849vw;
-    left: -0vh;
-  }
-}
-
-
-
 .animation-paused {
   animation-play-state: paused !important;
 }
+
 .overlay {
   background: black;
   position: absolute;
@@ -292,12 +355,21 @@ header>img {
   height: 90vw;
   animation-name: fade-out;
   left: 0;
-  top: 5vw;
   opacity: 0.6;
 }
+
 @keyframes fade-out {
   0% {
     opacity: 0.6;
+  }
+  25% {
+    opacity: 0.5;
+  }
+  50% {
+    opacity: 0.3;
+  }
+  75% {
+    opacity: 0.2;
   }
   100% {
     opacity: 0;
