@@ -5,8 +5,8 @@
   <meta charset="UTF-8">
   <title>text/ background contrast with background-clip and filter #1</title>
   <link href="css/cookie.css" rel="stylesheet">
-  <link href='http://fonts.googleapis.com/css?family=Roboto:100,300,500' rel='stylesheet' type='text/css'>
-  <link href='http://fonts.googleapis.com/css?family=Roboto+Condensed:400,700,300' rel='stylesheet' type='text/css'>
+  <!-- <link href='http://fonts.googleapis.com/css?family=Roboto:100,300,500' rel='stylesheet' type='text/css'>
+  <link href='http://fonts.googleapis.com/css?family=Roboto+Condensed:400,700,300' rel='stylesheet' type='text/css'> -->
   <link href="css/style.css" rel="stylesheet">
 
 
@@ -20,6 +20,11 @@
 
 
   <header>
+    <div class="hamburger">
+      <div class="hamburger__line"></div>
+      <div class="hamburger__line"></div>
+      <div class="hamburger__line"></div>
+    </div>
     <nav class="navigation">
       <ul class="navigation__ul">
         <li><a href="#top">Home</a></li>
@@ -33,23 +38,23 @@
       </ul>
     </nav>
   </header>
-  <div class="tree-container centered-relative">
+  <div class="tree-container tree-container--mobile centered-relative">
     <img id="tree" class="tree-container__tree animation-paused pan-animation" src="img/tree--with-logo.png">
     <div class="box draw box--red animation-paused">
       <h3>+ Front End Coder</h3>
-      <p>The philosophy is simple. We place the concerns of your clients at the center of the user experience.</p>
+      <p class="">The philosophy is simple. We place the concerns of your clients at the center of the user experience.</p>
     </div>
     <div class="box draw box--blue animation-paused">
       <h3>+ SEO</h3>
-      <p>When it comes to SEO, content is key. We can show you how to optimize your web pages to get the most user visibility possible.</p>
+      <p class="">When it comes to SEO, content is key. We can show you how to optimize your web pages to get the most user visibility possible.</p>
     </div>
     <div class="box draw box--green animation-paused">
       <h3>+ Designer</h3>
-      <p>With our skills in HTML, CSS, and Javascript we can create a web application that looks good on all screen sizes.</p>
+      <p class="">With our skills in HTML, CSS, and Javascript we can create a web application that looks good on all screen sizes.</p>
     </div>
     <div class="box draw box--light-blue animation-paused">
       <h3>+ Back End Coder</h3>
-      <p>With our vast experience in back-end coding technologies such as PHP and MySQL, we can deliver a product that is unsurpassed.</p>
+      <p class="">With our vast experience in back-end coding technologies such as PHP and MySQL, we can deliver a product that is unsurpassed.</p>
     </div>
     <h1 class="tree-container__header pan-animation pan-animation--first-header animation-paused">Creative Web Development to grow your business</h1>
     <h2 class="tree-container__header pan-animation pan-animation--second-header animation-paused">“Simplicity, wit, and good typography.” </br><small>–Michael Bierut</small></h2>

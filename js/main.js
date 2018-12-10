@@ -1,31 +1,35 @@
 $(document).ready(function() {
-  $("#tree").on('load', animateTree).each(function() {
-    if (this.complete) $(this).trigger('load');
-  });
-  $("#tree").bind("animationend webkitAnimationEnd oAnimationEnd MSAnimationEnd", fadeBoxesIn);
+  $('#tree').on('load', animateTree);
+  $("#tree").on("animationend webkitAnimationEnd oAnimationEnd MSAnimationEnd", fadeBoxesIn);
+  $("#tree").on("animationstart webkitAnimationStart oAnimationStart MSAnimationStart", hideBoxes);
   boxOpacity();
 })
 
-var boxOpacity = function() {
+var hideBoxes = () => {
+  $('.box').addClass('opaque-zero');
+}
+
+var boxOpacity = () => {
   var mX, mY, distance;
-  $(document).mousemove(function(e) {
+  $(document).on('mousemove', (e) => {
     mX = e.pageX;
     mY = e.pageY;
-    $('.box').each(function() {
-      distance = calculateDistance($(this), mX, mY);
-      $(this).css('opacity', 1 - distance / $(window).innerWidth());
+    $('.box').each((i, obj) => {
+      distance = calculateDistance($(obj), mX, mY);
+      $(obj).css('opacity', 1 - distance / $(window).innerWidth());
     })
   });
 }
 
-var animateTree = function() {
+var animateTree = () => {
   $('.tree-container *').removeClass('animation-paused');
 }
 
-var fadeBoxesIn = function() {
-  var time = 500;
-  $('.box').each(function(index, obj) {
-    setTimeout(() => $(this).addClass('loaded'), time * index);
+var fadeBoxesIn = () => {
+  $('.box').removeClass('opaque-zero');
+  var time = 300;
+  $('.box').each((index, obj) => {
+    setTimeout(() => $(obj).addClass('loaded'), time * index);
   })
 }
 
