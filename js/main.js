@@ -6,7 +6,8 @@ $(document).ready(function() {
 })
 
 var hideBoxes = () => {
-  $('.box').addClass('opaque-zero');
+  $('.box').addClass('hide');
+  $('.box').removeClass('box--opaque');
 }
 
 var boxOpacity = () => {
@@ -26,10 +27,10 @@ var animateTree = () => {
 }
 
 var fadeBoxesIn = () => {
-  $('.box').removeClass('opaque-zero');
+  $('.box').removeClass('hide');
   var time = 300;
   $('.box').each((index, obj) => {
-    setTimeout(() => $(obj).addClass('loaded'), time * index);
+    setTimeout(() => $(obj).addClass('box--opaque'), time * index);
   })
 }
 
