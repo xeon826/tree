@@ -1,9 +1,18 @@
 $(document).ready(function() {
-  $('#tree').on('load', animateTree);
-  $("#tree").on("animationend webkitAnimationEnd oAnimationEnd MSAnimationEnd", fadeBoxesIn);
-  $("#tree").on("animationstart webkitAnimationStart oAnimationStart MSAnimationStart", hideBoxes);
+  // $('html').scrollTop(900);
+  $("#tree").on('load', animateTree)
+    .on("animationend webkitAnimationEnd oAnimationEnd MSAnimationEnd", fadeBoxesIn)
+    .on("animationstart webkitAnimationStart oAnimationStart MSAnimationStart", hideBoxes);
   boxOpacity();
+  hamburger();
 })
+
+var hamburger = () => {
+  $('body').on('click', '.hamburger', function() {
+    $(this).toggleClass('is-active');
+    $('header').toggleClass('is-active');
+  })
+}
 
 var hideBoxes = () => {
   $('.box').addClass('hide');
@@ -27,10 +36,15 @@ var animateTree = () => {
 }
 
 var fadeBoxesIn = () => {
-  $('.box').removeClass('hide');
+  $(window).on('scroll', getBoxes).trigger('scroll');
+}
+
+var getBoxes = () => {
   var time = 300;
-  $('.box').each((index, obj) => {
-    setTimeout(() => $(obj).addClass('box--opaque'), time * index);
+  $('.box').not('.box--opaque').each((index, obj) => {
+  $(obj).removeClass('hide');
+    if ($(obj).offset().top < $(window).scrollTop() + $(window).innerHeight())
+      setTimeout(() => $(obj).addClass('box--opaque'), time * index);
   })
 }
 

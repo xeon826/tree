@@ -18,6 +18,9 @@ header {
 h1 {
   text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;
 }
+.hamburger-inner:before, .hamburger-inner:after, .hamburger-inner {
+  background-color: white !important;
+}
 
 .hide {
   display: none;
@@ -62,7 +65,7 @@ header {
   width: 60%;
   height: 100%;
 }
-.hamburger, .navigation__link {
+.navigation__link {
   border-top: 2px solid black;
   text-align: center;
   margin: 0 1.5vw 0 1.5vw;
@@ -172,6 +175,28 @@ header {
 .box--light-blue p {
   background: #2d87c6;
 }
+.services-container__box {
+  /* background: white; */
+  position: relative;
+}
+.services-container {
+  display: flex;
+}
+.services-container .services-container__box {
+  flex-grow: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  align-content: center;
+}
+.services-container .services-container__box img {
+  width: 60%;
+  flex-grow: .1;
+}
+.services-container .services-container__box p {
+  flex-grow: 1;
+  color: white;
+}
 
 .tree-container__tree {
   position: absolute;
@@ -199,6 +224,9 @@ header {
 }
 
 @media only screen and (min-width: 701px) {
+  .hamburger {
+    display: none !important;
+  }
   .pan-animation {
     animation-name: pan;
     animation-duration: 3s;
@@ -221,6 +249,11 @@ header {
   color: white;
   font-size: 3.66vw;
   top: 120vh;
+}
+
+.section {
+  border-bottom: 2px dashed white;
+  padding: 10%;
 }
 
 .section.about {
@@ -481,9 +514,6 @@ header {
 }
 
 @media screen and (max-width: 1300px) and (min-width: 700px) {
-  .hamburger {
-    display: none;
-  }
   .box {
     width: 33vw;
   }
@@ -493,29 +523,23 @@ header {
 }
 
 @media only screen and (max-width: 700px) {
-  .hamburger__line {
-    border-bottom: 1px solid white;
-    /* padding-bottom: 1.5vw; */
-    width: 50%;
-  }
-  .hamburger .hamburger__line:nth-child(1) {
-    transform: rotate(-60deg);
-  }
-  .hamburger .hamburger__line:nth-child(2) {
-    display:none;
-  }
-  .hamburger .hamburger__line:nth-child(3) {
-    transform: rotate(60deg);
-  }
   header {
     width: 30%;
+    left: -30%;
     height: 100%;
+    transition: 1s;
+  }
+  header.is-active {
+    left: 0;
+  }
+  .hamburger {
+    left: 2%;
+    position: fixed;
   }
   .navigation {
     flex-direction: column;
-    /* margin-left: 5%; */
-    /* margin-right: 5%; */
     margin: auto;
+    margin-top: 45%;
   }
   .navigation__link {
     border-top: 0;
@@ -525,14 +549,6 @@ header {
   }
   .logo {
     display: none;
-  }
-  .hamburger {
-    align-items: flex-end;
-    align-content: flex-end;
-    display: flex;
-    padding-top: 5%;
-    height: 10%;
-    flex-direction: column;
   }
   .tree-container {
     height: 96vw;
