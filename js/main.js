@@ -15,8 +15,8 @@ var hamburger = () => {
 }
 
 var hideBoxes = () => {
-  $('.box').addClass('hide');
-  $('.box').removeClass('box--opaque');
+  $('.tree-container .box').addClass('hidden').removeClass('box--opaque');
+  $(window).on('scroll', getBoxes).trigger('scroll');
 }
 
 var boxOpacity = () => {
@@ -36,13 +36,14 @@ var animateTree = () => {
 }
 
 var fadeBoxesIn = () => {
-  $(window).on('scroll', getBoxes).trigger('scroll');
+  $('.tree-container .box').removeClass('hidden');
+  $(window).trigger('scroll');
 }
 
 var getBoxes = () => {
   var time = 300;
-  $('.box').not('.box--opaque').each((index, obj) => {
-  $(obj).removeClass('hide');
+  $('.box').not('.box--opaque').not('.hidden').each((index, obj) => {
+  $(obj).removeClass('hidden');
     if ($(obj).offset().top < $(window).scrollTop() + $(window).innerHeight())
       setTimeout(() => $(obj).addClass('box--opaque'), time * index);
   })
