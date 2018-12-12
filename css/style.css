@@ -18,6 +18,7 @@ header {
 h1 {
   text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;
 }
+
 .hamburger-inner:before, .hamburger-inner:after, .hamburger-inner {
   background-color: white !important;
 }
@@ -56,6 +57,7 @@ header {
   width: 100%;
   height: 5vw;
 }
+
 .navigation {
   display: flex;
   align-items: center;
@@ -65,6 +67,7 @@ header {
   width: 60%;
   height: 100%;
 }
+
 .navigation__link {
   border-top: 2px solid black;
   text-align: center;
@@ -72,7 +75,7 @@ header {
   flex-grow: 1;
 }
 
-.navigation__link{
+.navigation__link {
   font-family: "Roboto Condensed";
   border-top: 3px solid #000000;
   display: block;
@@ -108,6 +111,7 @@ header {
 }
 
 .box {
+  opacity: 0;
   position: absolute;
   width: 16vw;
 }
@@ -124,7 +128,7 @@ header {
   z-index: 2;
 }
 
-.box.box--opaque h3, .box.box--opaque p {
+.box.box--opaque h3, .box.box--opaque p, .box.box--opaque {
   opacity: 1;
 }
 
@@ -175,24 +179,25 @@ header {
 .box--light-blue p {
   background: #2d87c6;
 }
-.services-container__box {
-  /* background: white; */
-  position: relative;
-}
+
 .services-container {
   display: flex;
 }
+
 .services-container .services-container__box {
   flex-grow: 1;
   display: flex;
+  position: relative;
   flex-direction: column;
   align-items: center;
   align-content: center;
 }
+
 .services-container .services-container__box img {
-  width: 60%;
+  width: 30%;
   flex-grow: .1;
 }
+
 .services-container .services-container__box p {
   flex-grow: 1;
   color: white;
@@ -209,21 +214,24 @@ header {
   display: block;
   position: absolute;
 }
+
 .tree--endpoint {
   width: 100vw;
   top: -63.089vw;
   left: -0vh;
 }
+
 .pan-animation {
+  /* if screen is too small, trigger the boxes to fade in */
   animation-duration: 0.5s;
-  animation-delay: 2s;
+  animation-delay: 1s;
   animation-name: animation-end;
   transition: all 1s;
   animation-iteration-count: 1;
   animation-fill-mode: forwards;
 }
 
-@media only screen and (min-width: 701px) {
+@media only screen and (min-width: 768px) {
   .hamburger {
     display: none !important;
   }
@@ -491,7 +499,7 @@ header {
 
 .box.box--opaque::before, .box.box--opaque::after {
   width: 99%;
-  height: 98%;
+  height: 99%;
   z-index: 3;
 }
 
@@ -513,7 +521,7 @@ header {
   transition: height 0.25s ease-out, width 0.25s ease-out 0.25s;
 }
 
-@media screen and (max-width: 1300px) and (min-width: 700px) {
+@media screen and (max-width: 1300px) and (min-width: 768px) {
   .box {
     width: 33vw;
   }
@@ -522,7 +530,7 @@ header {
   }
 }
 
-@media only screen and (max-width: 700px) {
+@media only screen and (max-width: 768px) {
   header {
     width: 30%;
     left: -30%;
@@ -554,7 +562,7 @@ header {
     height: 96vw;
     transition: 1s;
   }
-  .tree-container{
+  .tree-container {
     height: 160.2vw;
   }
   .tree-container__header {
@@ -581,5 +589,35 @@ header {
   .tree-container__header {
     font-size: 4vw;
     line-height: 4vw;
+  }
+}
+
+.services-container__box {
+  top: 0;
+  left: 0;
+  flex-grow: 1;
+  max-width: 30%;
+  margin: 2%;
+}
+.services-container__box > div {
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+  margin: 10%;
+  padding: 20%;
+  width: 100%;
+  flex-grow: 16;
+}
+.box--design > div {
+  background-image: url('../img/tree--white-blue.png');
+}
+
+@media only screen and (max-width: 1200px) {
+  .services-container {
+    flex-wrap: wrap;
+  }
+  .services-container__box {
+    max-width: 40%;
+    margin: 5%;
   }
 }
