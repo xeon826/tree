@@ -6,13 +6,21 @@
 body {
   font: 18px/24px "Roboto", Helvetica, Helvetica Neue, Arial;
   font-weight: 300;
-  background: black;
+  background: #0A0A0A;
   color: white;
   overflow-x: hidden;
 }
 
 header {
-  overflow: hidden;
+  background: #232323 !important;
+  overflow: visible;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 4;
+  background: #222222;
+  width: 100%;
+  height: 5vw;
 }
 
 h1 {
@@ -47,17 +55,6 @@ h1 {
   background-size: cover;
 }
 
-header {
-  overflow: visible;
-  position: fixed;
-  top: 0;
-  left: 0;
-  z-index: 4;
-  background: #222222;
-  width: 100%;
-  height: 5vw;
-}
-
 .navigation {
   display: flex;
   align-items: center;
@@ -68,23 +65,19 @@ header {
   height: 100%;
 }
 
+
 .navigation__link {
   border-top: 2px solid black;
   text-align: center;
   margin: 0 1.5vw 0 1.5vw;
   flex-grow: 1;
-}
-
-.navigation__link {
-  font-family: "Roboto Condensed";
+  font: 18px/24px "Roboto", Helvetica, Helvetica Neue, Arial !important;
   border-top: 3px solid #000000;
   display: block;
   padding: 5px;
-  color: #666666;
   text-decoration: none;
-  color: #ffffff;
   font-size: 16px;
-  font-weight: 700;
+  font-weight: 700 !important;
   transition: .5s;
 }
 
@@ -102,12 +95,13 @@ header {
 }
 
 .tree-container {
+  -webkit-clip-path: polygon(0 0, 99% 0, 100% 90%, 50% 100%, 0 90%);
+  clip-path: polygon(0 0, 99% 0, 100% 90%, 50% 100%, 0 90%);
   width: 100vw;
   height: 56.2vw;
   margin-top: 5vw;
   position: relative;
-  overflow-y: hidden;
-  overflow-x: hidden;
+  overflow: hidden;
 }
 
 .box {
@@ -135,7 +129,7 @@ header {
 .box p {
   font: 18px/24px "Roboto", Helvetica, Helvetica Neue, Arial;
   font-size: 14px;
-  font-weight: 300;
+  font-weight: 600;
   color: #ffffff;
   background: #c91115;
 }
@@ -237,7 +231,7 @@ header {
   }
   .pan-animation {
     animation-name: pan;
-    animation-duration: 3s;
+    animation-duration: 8s;
     animation-delay: 2s;
   }
 }
@@ -250,23 +244,25 @@ header {
 }
 
 .tree-container__header, .section__header {
+  text-shadow: 2px 2px 10px black;
   text-align: center;
   display: block;
   width: 100vw;
-  line-height: 3.66vw;
   color: white;
   font-size: 3.66vw;
   top: 120vh;
 }
 
+.section__header {
+  position: relative;
+  top: 0;
+  z-index: 2;
+}
+
 .section {
   border-bottom: 2px dashed white;
   padding: 10%;
-}
-
-.section.about {
   position: relative;
-  height: 50vw;
   padding: 3vw 5vw 3vw 5vw;
 }
 
@@ -541,13 +537,14 @@ header {
     left: 0;
   }
   .hamburger {
+    top: 2%;
     left: 2%;
     position: fixed;
   }
   .navigation {
     flex-direction: column;
     margin: auto;
-    margin-top: 45%;
+    margin-top: 65%;
   }
   .navigation__link {
     border-top: 0;
@@ -599,17 +596,70 @@ header {
   max-width: 30%;
   margin: 2%;
 }
-.services-container__box > div {
+
+.services-container__box>div {
   background-size: contain;
   background-repeat: no-repeat;
   background-position: center;
   margin: 10%;
-  padding: 20%;
+  padding: 30%;
   width: 100%;
   flex-grow: 16;
 }
-.box--design > div {
+
+/* background: #6EA131;
+  background: #6360AA;
+  background: #2d87c6; */
+
+.services-container__box p {
+  background: #121212;
+}
+
+.box--design>img {
+  top: 15%;
+  left: 50%;
+  position: absolute;
+  animation-duration: 5s;
+  animation-name: paint-brush;
+  animation-iteration-count: infinite;
+}
+
+@keyframes paint-brush {
+  0% {
+    top: 15% left: 35%;
+  }
+  25% {
+    top: 5%;
+    left: 55%;
+  }
+  50% {
+    top: 5%;
+    left: 45%;
+  }
+  75% {
+    top: 10%;
+    left: 40%;
+  }
+  100% {
+    top: 15%;
+    left: 50%;
+  }
+}
+
+.box--design>div {
   background-image: url('../img/tree--white-blue.png');
+}
+
+.box--mobile>div {
+  background-image: url('../img/paint-brush.png')
+}
+
+.box--front-end>div {
+  background-image: url('../img/paint-brush.png')
+}
+
+.box--back-end>div {
+  background-image: url('../img/paint-brush.png')
 }
 
 @media only screen and (max-width: 1200px) {
@@ -620,4 +670,46 @@ header {
     max-width: 40%;
     margin: 5%;
   }
+}
+
+.star {
+  -webkit-clip-path: polygon(50% 0%, 61% 35%, 98% 35%, 68% 57%, 79% 91%, 50% 70%, 21% 91%, 32% 57%, 2% 35%, 39% 35%);
+  clip-path: polygon(50% 0%, 61% 35%, 98% 35%, 68% 57%, 79% 91%, 50% 70%, 21% 91%, 32% 57%, 2% 35%, 39% 35%);
+  width: 5vw;
+  height: 5vw;
+  top: 3%;
+  z-index: 1;
+  left: 50%;
+  transform: translateX(-50%);
+  position: absolute;
+  background: #cccc00;
+  transform: skewY(1);
+  animation-duration: 5s;
+  animation-name: hop;
+  animation-iteration-count: infinite;
+}
+
+@keyframes hop {
+  0% {
+    top: 3%;
+  }
+  25% {
+    top: 6%;
+  }
+  50% {
+    top: 3%;
+  }
+  75% {
+    top: 6%;
+  }
+  100% {
+    top: 3%;
+  }
+}
+.foliage {
+  position: absolute;
+  width: 10vw;
+  height: 10vw;
+  left: 0;
+  top: 25vw;
 }
