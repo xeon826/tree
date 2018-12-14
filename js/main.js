@@ -3,7 +3,7 @@ $(document).ready(function() {
   $("#tree").on('load', animateTree)
     .on("animationend webkitAnimationEnd oAnimationEnd MSAnimationEnd", fadeBoxesIn)
     .on("animationstart webkitAnimationStart oAnimationStart MSAnimationStart", hideBoxes);
-  // boxOpacity();
+  $(window).focus(animateTree);
   hamburger();
 })
 
