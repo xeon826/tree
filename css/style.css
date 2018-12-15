@@ -8,6 +8,7 @@ html {
 
 body {
   font: 18px/24px "Roboto", Helvetica, Helvetica Neue, Arial;
+  overflow-x: hidden;
   font-weight: 300;
   background: #0A0A0A;
   color: white;
@@ -267,32 +268,36 @@ h1 {
   top: 120vh;
 }
 .place-holder {
-  overflow: visible;
+  /* overflow: visible; */
+  overflow-x:visible;
   margin-top: 3vw;
   position: relative;
   width: 100vw;
   height: 40vw;
 }
 
-.section__quote {
-  width: 100%;
-  /* height: 100%; */
+.section__quote, .section__quote .foreground {
+  background: linear-gradient( rgba(0, 0, 250, 0.25), rgba(0, 0, 0, 0.45)), url('../img/tree_first.png');
+  width: 100vw;
   height: 40vw;
   margin-left: -5vw;
-  position: absolute;
+  margin-top: 5vw;
+  position: static !important;
   left: 0;
-  background: linear-gradient( rgba(0, 0, 250, 0.25), rgba(0, 0, 0, 0.45)), url('../img/tree_first.png');
-  background-size: contain !important;
-  background-position: center !important;
-  background-repeat: no-repeat !important;
+  background-size: 100% !important;
   background-attachment: fixed !important;
+  background-repeat: no-repeat !important;
   color: white !important;
 }
-.services .section__quote {
-  background: linear-gradient( rgba(0, 0, 250, 0.25), rgba(0, 0, 0, 0.45)), url('../img/tree_second.png');
+.about .section__quote {
+  /* background: linear-gradient( rgba(0, 0, 250, 0.25), rgba(0, 0, 0, 0.45)), url('../img/tree_second.png'); */
+  background: url('../img/tree_second.png');
+}
+.about .section__quote .foreground{
+  background: linear-gradient( rgba(0, 0, 250, 0.25), rgba(0, 0, 0, 0.45)), url('../img/tree_second-f.png');
 }
 
-.works .section__quote {
+.services .section__quote {
   background: linear-gradient( rgba(0, 0, 250, 0.25), rgba(0, 0, 0, 0.45)), url('../img/tree_third.jpg');
 }
 

@@ -1,11 +1,26 @@
 $(document).ready(function() {
-  // $('html').scrollTop(900);
-  $("#tree").on('load', animateTree)
-    .on("animationend webkitAnimationEnd oAnimationEnd MSAnimationEnd", fadeBoxesIn)
+  $('body').imagesLoaded(animateTree);
+  $('#tree').on("animationend webkitAnimationEnd oAnimationEnd MSAnimationEnd", fadeBoxesIn)
     .on("animationstart webkitAnimationStart oAnimationStart MSAnimationStart", hideBoxes);
   $(window).focus(animateTree);
   hamburger();
+  parallax();
 })
+
+
+
+var parallax = () => {
+  var initScrollTop = $(window).scrollTop();
+  $('.foreground').css({
+    'background-position-y': (initScrollTop / 45) + '%'
+  });
+  $(window).scroll(function() {
+    var scrollTop = $(window).scrollTop();
+    $('.foreground').css({
+      'background-position-y': (scrollTop / 45) + '%'
+    });
+  });
+}
 
 var hamburger = () => {
   $('body').on('click', '.hamburger', function() {
@@ -43,7 +58,7 @@ var fadeBoxesIn = () => {
 var getBoxes = () => {
   var time = 300;
   $('.box').not('.box--opaque').not('.hidden').each((index, obj) => {
-  $(obj).removeClass('hidden');
+    $(obj).removeClass('hidden');
     if ($(obj).offset().top < $(window).scrollTop() + $(window).innerHeight())
       setTimeout(() => $(obj).addClass('box--opaque'), time * index);
   })
@@ -78,4 +93,37 @@ function fadeInText(e) {
     ease: Expo.easeOut,
     delay: .5
   }, .1, "in"), e
+}
+
+var detectBrowser = () => {
+  // Opera 8.0+
+  var isOpera = (!!window.opr && !!opr.addons) || !!window.opera || navigator.userAgent.indexOf(' OPR/') >= 0;
+
+  // Firefox 1.0+
+  var isFirefox = typeof InstallTrigger !== 'undefined';
+
+  // Safari 3.0+ "[object HTMLElementConstructor]"
+  var isSafari = /constructor/i.test(window.HTMLElement) || (function(p) {
+    return p.toString() === "[object SafariRemoteNotification]";
+  })(!window['safari'] || (typeof safari !== 'undefined' && safari.pushNotification));
+
+  // Internet Explorer 6-11
+  var isIE = /*@cc_on!@*/ false || !!document.documentMode;
+
+  // Edge 20+
+  var isEdge = !isIE && !!window.StyleMedia;
+
+  // Chrome 1 - 68
+  var isChrome = !!window.chrome && !!window.chrome.webstore;
+
+  // Blink engine detection
+  var isBlink = (isChrome || isOpera) && !!window.CSS;
+
+  if (isChrome) {
+    $('.section__quote').css({
+      'transform':'translate3d(0,0,0)',
+      '-webkit-transform':'translate3d(0,0,0)',
+      '-moz-transform':'translate3d(0,0,0)'
+    })
+  }
 }
