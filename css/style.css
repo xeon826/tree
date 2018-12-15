@@ -290,11 +290,7 @@ h1 {
   color: white !important;
 }
 .about .section__quote {
-  /* background: linear-gradient( rgba(0, 0, 250, 0.25), rgba(0, 0, 0, 0.45)), url('../img/tree_second.png'); */
-  background: url('../img/tree_second.png');
-}
-.about .section__quote .foreground{
-  background: linear-gradient( rgba(0, 0, 250, 0.25), rgba(0, 0, 0, 0.45)), url('../img/tree_second-f.png');
+  background: linear-gradient( rgba(0, 0, 250, 0.25), rgba(0, 0, 0, 0.45)), url('../img/tree_second.png');
 }
 
 .services .section__quote {
@@ -671,13 +667,6 @@ h1 {
 .services-container__box p {
   background: #121212;
 }
-.box--front-end > img {
-  left: 50%;
-  transform: translateX(-50%);
-  bottom: 65%;
-  width: 28% !important;
-  position: absolute;
-}
 
 .box--design>img {
   top: 15%;
@@ -711,7 +700,6 @@ h1 {
 }
 
 .box--design>div {
-  /* background-image: url('../img/tree--white-blue.png'); */
   background-image: linear-gradient( rgba(28, 28, 28, .65), rgba(28, 28, 28, 0)), url('../img/tree--white-blue.png');
 }
 
@@ -722,6 +710,22 @@ h1 {
 .box--front-end>div {
   background-image: linear-gradient( rgba(28, 28, 28, .65), rgba(28, 28, 28, 0)), url('../img/laptop.png');
 }
+/* .box--front-end>div.pulse {
+  animation-duration: .5s;
+  animation-name: pulse;
+  animation-iteration-count: infinite;
+} */
+
+/* @keyframes pulse {
+  0% {
+    transform: scale(1.0);
+  }
+  25% {
+    transform: scale(1.05);
+  }
+
+} */
+
 .box--front-end {
   overflow: hidden;
 }

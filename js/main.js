@@ -5,18 +5,19 @@ $(document).ready(function() {
   $(window).focus(animateTree);
   hamburger();
   parallax();
+  detectBrowser();
 })
 
 
 
 var parallax = () => {
   var initScrollTop = $(window).scrollTop();
-  $('.foreground').css({
+  $('.section__quote').css({
     'background-position-y': (initScrollTop / 45) + '%'
   });
   $(window).scroll(function() {
     var scrollTop = $(window).scrollTop();
-    $('.foreground').css({
+    $('.section__quote').css({
       'background-position-y': (scrollTop / 45) + '%'
     });
   });
@@ -47,7 +48,7 @@ var boxOpacity = () => {
 }
 
 var animateTree = () => {
-  // $('.tree-container *').removeClass('animation-paused');
+  $('.tree-container *').removeClass('animation-paused');
 }
 
 var fadeBoxesIn = () => {
@@ -123,7 +124,6 @@ var detectBrowser = () => {
     $('.section__quote').css({
       'transform':'translate3d(0,0,0)',
       '-webkit-transform':'translate3d(0,0,0)',
-      '-moz-transform':'translate3d(0,0,0)'
     })
   }
 }
