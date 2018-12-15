@@ -180,6 +180,7 @@ h1 {
 }
 
 .services-container .services-container__box {
+  overflow: hidden;
   flex-grow: 1;
   display: flex;
   position: relative;
@@ -203,9 +204,6 @@ h1 {
 
 .tree-container__tree {
   position: absolute;
-  -webkit-mask-image: linear-gradient( rgba(0, 0, 250, 0.45), rgba(0, 0, 0, 0.80));
-  mask-image: linear-gradient( rgba(0, 0, 250, 0.45), rgba(0, 0, 0, 0.80));
-
   top: 0vh;
 }
 
@@ -278,46 +276,31 @@ h1 {
 
 .section__quote {
   width: 100%;
-  height: 100%;
+  /* height: 100%; */
+  height: 40vw;
   margin-left: -5vw;
   position: absolute;
   left: 0;
   background: linear-gradient( rgba(0, 0, 250, 0.25), rgba(0, 0, 0, 0.45)), url('../img/tree_first.png');
-  background-size: cover;
-  background-position: bottom;
-  background-repeat: no-repeat;
-  background-attachment: fixed;
+  background-size: contain !important;
+  background-position: center !important;
+  background-repeat: no-repeat !important;
+  background-attachment: fixed !important;
   color: white !important;
 }
 .services .section__quote {
   background: linear-gradient( rgba(0, 0, 250, 0.25), rgba(0, 0, 0, 0.45)), url('../img/tree_second.png');
-  background-size: cover;
-  background-position: bottom;
-  background-repeat: no-repeat;
-  background-attachment: fixed;
 }
 
 .works .section__quote {
   background: linear-gradient( rgba(0, 0, 250, 0.25), rgba(0, 0, 0, 0.45)), url('../img/tree_third.jpg');
-  background-size: cover;
-  background-position: bottom;
-  background-repeat: no-repeat;
-  background-attachment: fixed;
 }
 
 .works .section__quote {
   background: linear-gradient( rgba(0, 0, 250, 0.25), rgba(0, 0, 0, 0.45)), url('../img/tree_third.jpg');
-  background-size: cover;
-  background-position: bottom;
-  background-repeat: no-repeat;
-  background-attachment: fixed;
 }
 .founder .section__quote {
   background: linear-gradient( rgba(0, 0, 250, 0.25), rgba(0, 0, 0, 0.45)), url('../img/tree_fourth.jpg');
-  background-size: cover;
-  background-position: bottom;
-  background-repeat: no-repeat;
-  background-attachment: fixed;
 }
 
 .quote {
@@ -567,8 +550,8 @@ h1 {
 }
 
 .box.box--opaque::before, .box.box--opaque::after {
-  width: 99%;
-  height: 99%;
+  width: 98.5%;
+  height: 98.5%;
   z-index: 3;
 }
 
@@ -683,6 +666,13 @@ h1 {
 .services-container__box p {
   background: #121212;
 }
+.box--front-end > img {
+  left: 50%;
+  transform: translateX(-50%);
+  bottom: 65%;
+  width: 28% !important;
+  position: absolute;
+}
 
 .box--design>img {
   top: 15%;
@@ -716,7 +706,8 @@ h1 {
 }
 
 .box--design>div {
-  background-image: url('../img/tree--white-blue.png');
+  /* background-image: url('../img/tree--white-blue.png'); */
+  background-image: linear-gradient( rgba(28, 28, 28, .65), rgba(28, 28, 28, 0)), url('../img/tree--white-blue.png');
 }
 
 .box--mobile>div {
@@ -724,7 +715,19 @@ h1 {
 }
 
 .box--front-end>div {
-  background-image: url('../img/paint-brush.png')
+  background-image: linear-gradient( rgba(28, 28, 28, .65), rgba(28, 28, 28, 0)), url('../img/laptop.png');
+}
+.box--front-end {
+  overflow: hidden;
+}
+.box--front-end>div::after {
+  /* content: 'asdf'; */
+  position: absolute;
+  font-family: courier new;
+  left: 50%;
+  width: 20vw;
+  height: 20vw;
+
 }
 
 .box--back-end>div {
@@ -806,4 +809,19 @@ h1 {
   margin: auto;
   max-width: 25vw;
   max-height: 25vw;
+}
+.split-text {
+  /* transform: skewY(50deg); */
+  /* transform: rotate(50deg); */
+  transform-origin:left;
+  display: inline-block;
+  top: 50px;
+  height: 100%;
+  width: 100%;
+  overflow:hidden;
+  transition: 2s;
+}
+.split-text--second {
+  /* transform: skewY(0deg); */
+  /* transform: rotate(0deg); */
 }

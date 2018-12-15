@@ -32,7 +32,7 @@ var boxOpacity = () => {
 }
 
 var animateTree = () => {
-  $('.tree-container *').removeClass('animation-paused');
+  // $('.tree-container *').removeClass('animation-paused');
 }
 
 var fadeBoxesIn = () => {
@@ -51,4 +51,31 @@ var getBoxes = () => {
 
 function calculateDistance(elem, mouseX, mouseY) {
   return Math.floor(Math.sqrt(Math.pow(mouseX - (elem.offset().left + (elem.width() / 2)), 2) + Math.pow(mouseY - (elem.offset().top + (elem.height() / 2)), 2)));
+}
+
+function fadeInText(e) {
+  var t = document.querySelector(e),
+    i = t.dataset.split,
+    s = new SplitText(t, {
+      type: i
+    }),
+    n = new TimelineMax({
+      paused: !1
+    }),
+    o = s[i],
+    l = o.map(function(e) {
+      return '<span style="display: inline-block">' + e.innerText + "</span>"
+    });
+  o.forEach(function(e, t) {
+    e.style.overflow = "hidden", e.innerHTML = l[t]
+  });
+  var a = o.map(function(e) {
+    return e.querySelector("span")
+  });
+  return n.staggerFrom(a, 1.25, {
+    skewY: 4,
+    y: "200%",
+    ease: Expo.easeOut,
+    delay: .5
+  }, .1, "in"), e
 }
