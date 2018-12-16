@@ -703,28 +703,89 @@ h1 {
   background-image: linear-gradient( rgba(28, 28, 28, .65), rgba(28, 28, 28, 0)), url('../img/tree--white-blue.png');
 }
 
-.box--mobile>div {
-  background-image: url('../img/paint-brush.png')
+.box--seo>div {
+  background-image: linear-gradient( rgba(28, 28, 28, .65), rgba(28, 28, 28, 0)), url('../img/tree--white-blue.png');
+}
+.box--seo > div > .seo__magnifier {
+  background-image: linear-gradient( rgba(28, 28, 28, .65), rgba(28, 28, 28, 0)), url('../img/tree--white-blue.png');
+  background-size: 150%;
+  background-position-x: -10%;
+  background-repeat: no-repeat;
+  width: 10vw;
+  height: 10vw;
+  border-radius: 100%;
+  position: absolute;
+  top: 13%;
+  left: 50%;
+  transform: translateX(-50%);
 }
 
 .box--front-end>div {
   background-image: linear-gradient( rgba(28, 28, 28, .65), rgba(28, 28, 28, 0)), url('../img/laptop.png');
 }
-/* .box--front-end>div.pulse {
-  animation-duration: .5s;
-  animation-name: pulse;
+.box--front-end>div > h5{
+  position: absolute;
+  font-family: courier new;
+  padding: 0 5px 0 5px;
+  background: black;
+  animation-duration: 2s;
   animation-iteration-count: infinite;
-} */
+}
+.box--front-end > div > h5:nth-child(1) {
+  top: -10%;
+  left: 0%;
+  color: orange !important;
+  animation-name: header;
+}
+@keyframes header {
+  0 % {
+    top: -10%;
+    left: 0%;
+  }
+  100% {
+    top: 20%;
+    left: 40%;
+    opacity: 0.1;
+  }
+}
+.box--front-end>div > h5:nth-child(2){
+  top: 30%;
+  left: 100%;
+  color: lime !important;
+  animation-name: div;
+  animation-delay: 0.5s;
+}
+@keyframes div {
+  0 % {
+    top: 40%;
+    left: 100%;
+  }
+  100% {
+    top: 20%;
+    left: 40%;
+    opacity: 0.1;
+  }
 
-/* @keyframes pulse {
+}
+
+.box--front-end>div > h5:nth-child(3){
+  top: 40%;
+  left: -50%;
+  color: deeppink !important;
+  animation-name: article;
+  animation-delay: 1s;
+}
+@keyframes article {
   0% {
-    transform: scale(1.0);
+    top: 40%;
+    left: -50%;
   }
-  25% {
-    transform: scale(1.05);
+  100% {
+    top: 20%;
+    left: 30%;
+    opacity: 0;
   }
-
-} */
+}
 
 .box--front-end {
   overflow: hidden;
