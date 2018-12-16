@@ -183,6 +183,7 @@ h1 {
 
 .services-container .services-container__box {
   /* overflow: hidden; */
+  overflow: visible !important;
   flex-grow: 1;
   display: flex;
   position: relative;
@@ -664,8 +665,7 @@ h1 {
   background-position: center;
   margin: 10%;
   padding: 30%;
-  width: 100%;
-  flex-grow: 16;
+  max-width: 100%;
 }
 
 .services-container__box p {
@@ -709,20 +709,6 @@ h1 {
 
 .box--seo>div {
   background-image: linear-gradient( rgba(28, 28, 28, .65), rgba(28, 28, 28, 0)), url('../img/tree--white-blue.png');
-}
-
-.box--seo>div>.seo__magnifier {
-  background-image: linear-gradient( rgba(28, 28, 28, .65), rgba(28, 28, 28, 0)), url('../img/tree--white-blue.png');
-  background-size: 150%;
-  background-position-x: -10%;
-  background-repeat: no-repeat;
-  width: 10vw;
-  height: 10vw;
-  border-radius: 100%;
-  position: absolute;
-  top: 13%;
-  left: 50%;
-  transform: translateX(-50%);
 }
 
 .box--front-end>div {
@@ -899,10 +885,9 @@ h1 {
   max-width: 25vw;
   max-height: 25vw;
 }
-
 .large {
-  width: 375px;
-  height: 375px;
+  width: 205px;
+  height: 205px;
   position: absolute;
   border-radius: 100%;
   box-shadow: 0 0 0 7px rgba(255, 255, 255, 0.85), 0 0 7px 7px rgba(0, 0, 0, 0.25), inset 0 0 40px 2px rgba(0, 0, 0, 0.25);
@@ -912,7 +897,6 @@ h1 {
 }
 .large[style] {
   background-image: url('../img/tree--white-blue.png') !important;
-  /* background-position: center !important; */
-  background-size: 50% !important;
+  background-size: 270% !important;
   background-repeat: no-repeat !important;
 }

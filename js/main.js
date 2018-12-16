@@ -1,4 +1,5 @@
 $(document).ready(function() {
+  $('html').scrollTop(1700);
   $('body').imagesLoaded(animateTree);
   $('#tree').on("animationend webkitAnimationEnd oAnimationEnd MSAnimationEnd", fadeBoxesIn)
     .on("animationstart webkitAnimationStart oAnimationStart MSAnimationStart", hideBoxes);
@@ -138,7 +139,7 @@ var magnifyingGlass = () => {
   $(".box--seo").mousemove(function(e) {
     if (!sub_width && !sub_height) {
       var image_object = new Image();
-      image_object.src = $(".small").data("src");
+      image_object.src = 'img/tree--white-blue.png';
       sub_width = image_object.width;
       sub_height = image_object.height;
     } else {
@@ -165,8 +166,8 @@ var magnifyingGlass = () => {
           left: px,
           top: py,
           // backgroundPosition: bgp,
-          'background-position-y': px + 'px',
-          'background-position-x': py + 'px'
+          'background-position-y': py + 'px',
+          'background-position-x': px + 'px'
         });
       }
     }
