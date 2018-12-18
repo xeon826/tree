@@ -1,12 +1,22 @@
 $(document).ready(function() {
-  $('html').scrollTop(1700);
-  attachEvents();
+  // $('html').scrollTop(4400);
+  treeEvents();
   hamburger();
   parallax();
+  skillBar();
+  minimizeHeader();
 })
+var minimizeHeader = () => {
+  $(window).scroll(function() {
+    if ($(this).scrollTop() > 700) {
+      $('header:not(.minimized)').addClass('minimized');
+    } else {
+      $('header.minimized').removeClass('minimized');
+    }
+  })
+}
 
-
-var attachEvents = () => {
+var treeEvents = () => {
   $('body').imagesLoaded(animateTree);
   $('#tree').on("animationend webkitAnimationEnd oAnimationEnd MSAnimationEnd", fadeBoxesIn)
     .on("animationstart webkitAnimationStart oAnimationStart MSAnimationStart", hideBoxes);
@@ -27,8 +37,8 @@ var parallax = () => {
 }
 
 var hamburger = () => {
-  $('body').on('click', '.hamburger', function() {
-    $(this).toggleClass('is-active');
+  $('body').on('click', '.hamburger, header.is-active .navigation__link', function() {
+    $('.hamburger').toggleClass('is-active');
     $('header').toggleClass('is-active');
   })
 }
@@ -57,6 +67,7 @@ var animateTree = () => {
 var fadeBoxesIn = () => {
   $('.tree-container .box').removeClass('hidden');
   $(window).trigger('scroll');
+  $('.navigation__link[href="#works"]').click(getBoxes);
 }
 
 var getBoxes = () => {
@@ -70,4 +81,21 @@ var getBoxes = () => {
 
 function calculateDistance(elem, mouseX, mouseY) {
   return Math.floor(Math.sqrt(Math.pow(mouseX - (elem.offset().left + (elem.width() / 2)), 2) + Math.pow(mouseY - (elem.offset().top + (elem.height() / 2)), 2)));
+}
+
+var skillBar = () => {
+  $(window).scroll(function() {
+    if ($('.skills').offset().top < $(window).scrollTop() + $(window).innerHeight()) {
+      animateSkillBar();
+    }
+  })
+  $('.navigation__link[href="#skills"]').click(animateSkillBar);
+}
+var animateSkillBar = () => {
+  $('.skillbar').each(function() {
+    $(this).children('.skill').text($(this).data('percent'));
+    $(this).find('.skill').animate({
+      width: $(this).attr('data-percent')
+    }, 3000);
+  });
 }

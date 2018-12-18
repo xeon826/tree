@@ -8,7 +8,7 @@ html {
 }
 
 body {
-  font: 18px/24px "Roboto", Helvetica, Helvetica Neue, Arial;
+  font: 'Roboto Condensed';
   overflow-x: hidden;
   font-weight: 300;
   background: #0A0A0A;
@@ -17,16 +17,20 @@ body {
 
 header {
   background: #232323 !important;
-  overflow: visible;
   position: fixed;
   top: 0;
   left: 0;
   z-index: 4;
   background: #222222;
+  transition: 1s;
   width: 100%;
   height: 5vw;
 }
 
+h4 {
+  font-family: 'Roboto Condensed';
+  font-size: 2vw;
+}
 
 .hamburger-inner:before, .hamburger-inner:after, .hamburger-inner {
   background-color: white !important;
@@ -62,36 +66,83 @@ header {
   align-content: center;
   position: relative;
   margin: auto;
-  width: 60%;
+  width: 100%;
   height: 100%;
 }
 
-.navigation__link {
-  border-top: 2px solid black;
-  text-align: center;
-  margin: 0 1.5vw 0 1.5vw;
+.navigation-container {
+  display: flex;
+  width: 65%;
+  margin: auto;
+  position: relative;
+}
+
+.navigation li {
   flex-grow: 1;
-  font: 18px/24px "Roboto", Helvetica, Helvetica Neue, Arial !important;
-  border-top: 3px solid #000000;
-  display: block;
-  padding: 5px;
+  list-style: none;
+  display: flex;
+  align-items: center;
+  align-content: center;
+}
+
+a.navigation__link {
+  font-family: 'Roboto Condensed';
+  font-weight: 700;
+  text-align: center;
+  color: white;
+  position: relative;
   text-decoration: none;
-  font-size: 16px;
-  font-weight: 700 !important;
-  transition: .5s;
+  line-height: 2vw;
+  width: 80%;
+  margin: auto;
 }
 
-.navigation__link img {
-  margin-top: 3vw;
-  width: 50%;
+a.navigation__link:not(.logo__anchor)::after, a.navigation__link:not(.logo__anchor)::before {
+  height: 2px;
+  z-index: 1;
+  content: ' ';
+  background: black;
+  width: 100%;
+  transition: 1s;
+  transition-timing-function: ease-out;
+  left: 50%;
+  transform: translateX(-50%);
+  position: absolute;
 }
 
-.navigation__link:hover {
-  border-top: 3px solid red;
+a.navigation__link:not(.logo__anchor)::before {
+  background: blue;
+  width: 0;
+  z-index: 2;
 }
 
-.box h3 {
+a.navigation__link:hover:not(.logo__anchor)::before {
+  width: 100%;
+}
+
+li.logo .navigation__link {
+  border-top: 0px;
+}
+
+li.logo {
+  flex-grow: 1;
+}
+
+a.navigation__link img {
+  flex-grow: 1;
+  left: 50%;
+  transform: translateX(-50%);
+  top: -1vw;
+  display: block;
+  margin: auto;
+  max-width: 100%;
+  position: absolute;
+}
+
+.box h3, .skills h3 {
   background: #222222;
+  margin: auto;
+  font-family: 'Roboto Condensed';
 }
 
 .tree-container {
@@ -99,7 +150,7 @@ header {
   clip-path: polygon(0 0, 99% 0, 100% 90%, 50% 100%, 0 90%);
   width: 100vw;
   height: 56.2vw;
-  margin-top: 5vw;
+  margin-top: 4vw;
   position: relative;
   overflow: hidden;
 }
@@ -108,10 +159,6 @@ header {
   opacity: 0;
   position: absolute;
   width: 16vw;
-}
-
-.box h3 {
-  margin: auto;
 }
 
 .box h3, .box p {
@@ -126,10 +173,14 @@ header {
   opacity: 1;
 }
 
+.box h3 {
+  font-size: 1.8vw;
+}
+
 .box p {
   font: 18px/24px "Roboto", Helvetica, Helvetica Neue, Arial;
-  font-size: 14px;
-  font-weight: 600;
+  font-size: 1.3vw;
+  font-weight: 400;
   color: #ffffff;
 }
 
@@ -190,7 +241,7 @@ header {
 }
 
 .services-container .services-container__box h3 {
-  background: rgba(0,0,0,0);
+  background: rgba(0, 0, 0, 0);
   flex-grow: 1;
   /* position: absolute; */
 }
@@ -218,6 +269,10 @@ header {
   position: absolute;
 }
 
+.tree-container__header {
+  font-family: 'Roboto Condensed';
+}
+
 .tree--endpoint {
   width: 100vw;
   top: -63.089vw;
@@ -235,6 +290,9 @@ header {
 }
 
 @media screen and (min-width: 768px) {
+  header.minimized {
+    height: 3.8vw;
+  }
   .hamburger {
     display: none !important;
   }
@@ -253,10 +311,10 @@ header {
 }
 
 .section {
-  margin-top:3vw;
+  margin-top: 0vw;
   padding: 10%;
   position: relative;
-  padding: 3vw 5vw 3vw 5vw;
+  padding: 6vw 5vw 3vw 5vw;
 }
 
 .tree-container__header, .section__header {
@@ -266,6 +324,10 @@ header {
   color: white;
   font-size: 3.66vw;
   top: 120vh;
+}
+
+.section__header {
+  font-size: 4vw;
 }
 
 .place-holder {
@@ -310,6 +372,9 @@ header {
 .quote {
   border-top: 1px dashed white;
   padding: 1vw;
+  font-family: 'Roboto Condensed';
+  font-weight: 500;
+  font-size: 2vw;
   width: 30%;
   position: relative;
   margin: auto;
@@ -321,6 +386,7 @@ header {
 .section__header {
   -webkit-clip-path: polygon(0% 15%, 15% 15%, 15% 0%, 85% 0%, 85% 15%, 100% 15%, 100% 85%, 85% 85%, 85% 100%, 15% 100%, 15% 85%, 0% 85%);
   clip-path: polygon(0% 15%, 15% 15%, 15% 0%, 85% 0%, 85% 15%, 100% 15%, 100% 85%, 85% 85%, 85% 100%, 15% 100%, 15% 85%, 0% 85%);
+  font-family: 'Roboto Condensed';
   padding-top: 1.3vw;
   line-height: 3.66vw;
   position: relative;
@@ -333,7 +399,10 @@ header {
 
 .section__paragraph {
   text-align: center;
+  font-size: 1.5vw;
+  font-weight: 600;
   margin-bottom: 2vw;
+  font-family: 'Roboto Condensed';
 }
 
 .pan-animation--first-header {
@@ -495,27 +564,29 @@ header {
 }
 
 .overlay {
-  background: black;
+  /* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#000000+0,45484d+100 */
+    background: radial-gradient(
+    circle closest-corner at center 45vw,
+    #222,
+    black 40%
+  ) no-repeat;
+  background-position: center;
   position: absolute;
   width: 100vw;
   height: 90vw;
   animation-name: fade-out;
   left: 0;
-  opacity: 0.6;
+  opacity: 0.8;
+  animation-duration: 2s;
+  animation-delay: 2s;
+  animation-iteration-count: 1;
+  animation-name: fade-out;
+  animation-fill-mode: forwards;
 }
 
 @keyframes fade-out {
   0% {
-    opacity: 0.6;
-  }
-  25% {
-    opacity: 0.5;
-  }
-  50% {
-    opacity: 0.3;
-  }
-  75% {
-    opacity: 0.2;
+    opacity: 0.8;
   }
   100% {
     opacity: 0;
@@ -556,7 +627,7 @@ header {
 
 .box.box--opaque::before, .box.box--opaque::after {
   width: 98.5%;
-  height: 98.5%;
+  height: 99.5%;
   z-index: 3;
 }
 
@@ -579,15 +650,49 @@ header {
 }
 
 @media screen and (max-width: 1300px) and (min-width: 768px) {
+  .box h3 {
+    font-size: 2.8vw;
+  }
+  .box p {
+    font-size: 2.0vw;
+  }
+  .section__paragraph {
+    font-size: 1.7vw;
+    font-weight: 600;
+  }
   .box {
     width: 33vw;
   }
   .box--blue, .box--light-blue {
     top: 30vw;
   }
+  a.navigation__link {
+    line-height: 3.5vw;
+  }
+  li.logo {
+    flex-grow: 2;
+  }
 }
 
 @media screen and (max-width: 768px) {
+  h4 {
+    font-size: 4vw;
+  }
+  .section__paragraph {
+    font-size: 3.5vw;
+    font-weight: 500;
+  }
+  .section__header {
+    font-size: 8vw;
+    line-height: 8vw;
+  }
+  .box h3, .skills h3 {
+    font-size: 4vw;
+    line-height: 4vw !important;
+  }
+  .box p {
+    font-size: 2.7vw;
+  }
   header {
     width: 30%;
     left: -30%;
@@ -601,19 +706,32 @@ header {
     top: 2%;
     left: 2%;
     position: fixed;
+    z-index: 4;
   }
-  .navigation {
+  .navigation-container {
     flex-direction: column;
     margin: auto;
     margin-top: 65%;
   }
+  ul.navigation-container li {
+    margin: 5vw 0 5vw 0;
+    width: 100%;
+  }
+
+  ul.navigation-container li a {
+    text-align: left;
+
+  }
+
   .navigation__link {
     border-top: 0;
-    flex-grow: .08;
     width: 100%;
     text-align: left;
   }
-  .logo {
+  a.navigation__link:not(.logo__anchor)::after, a.navigation__link:not(.logo__anchor)::before {
+    display: none;
+  }
+  li.logo {
     display: none;
   }
   .tree-container {
@@ -637,7 +755,7 @@ header {
   }
   .box h3, .box p {
     padding: 2.09vw;
-    font-size: 3.09vw;
+    /* font-size: 3.09vw; */
     line-height: 3vw;
     transition: 1s;
   }
@@ -654,8 +772,8 @@ header {
   top: 0;
   left: 0;
   flex-grow: 1;
-  max-width: 30%;
-  margin: 2%;
+  min-width: 23%;
+  margin: 1%;
 }
 
 .services-container__box>div {
@@ -801,8 +919,8 @@ header {
     flex-wrap: wrap;
   }
   .services-container__box {
-    max-width: 40%;
-    margin: 5%;
+    max-width: 48%;
+    margin: 1%;
   }
 }
 
@@ -885,7 +1003,7 @@ header {
   height: 8vw;
   border-radius: 100%;
   padding: 0;
-  background-size: 170%;
+  background-size: 270%;
   /* 16.45 */
   top: 5%;
   /* -12.75 */
@@ -894,7 +1012,7 @@ header {
   animation-duration: 4s;
   animation-iteration-count: infinite;
   background-position-x: -11%;
-  background-position-y: 33.5%;
+  background-position-y: 37.5%;
   box-shadow: inset 0 0 10px #A0A0A0;
   z-index: 2;
 }
@@ -904,25 +1022,25 @@ header {
     top: 5%;
     left: -5%;
     background-position-x: -11%;
-    background-position-y: 33.5%;
+    background-position-y: 37.5%;
   }
   25% {
     top: 10%;
     left: -5%;
     background-position-x: -11%;
-    background-position-y: 90%;
+    background-position-y: 74%;
   }
   50% {
     top: 10%;
     left: 25%;
     background-position-x: 75%;
-    background-position-y: 90%;
+    background-position-y: 74%;
   }
   75% {
     top: 5%;
     left: -5%;
     background-position-x: -11%;
-    background-position-y: 33.5%;
+    background-position-y: 37.5%;
   }
 }
 
@@ -931,15 +1049,51 @@ header {
     width: 14vw;
     height: 14vw;
   }
+  .contact.section p {
+    font-size: 4.5vw;
+  }
 }
+
 .contact.section h4, .contact.section p {
   width: 50%;
+  font-family: 'Roboto Condensed';
   display: block;
   text-align: center;
   margin: auto;
   position: relative;
 }
+
+.contact.section p {
+  font-size: 2.5vw;
+}
+
 .green {
   color: green;
   text-transform: uppercase;
+}
+
+.section.skills h3+div {
+  margin-bottom: 1vw;
+}
+
+.skill {
+  background: linear-gradient(90deg, #81EBF5 0%, #31B1CF 100%);
+  text-align: right;
+  padding-right: 20px;
+  line-height: 30px;
+  border-radius: 0 20px 20px 0;
+  height: 28px;
+  width: 0%;
+}
+
+.skills h3 {
+  background: rgba(0, 0, 0, 0);
+}
+
+@media screen and (min-width: 1367px) {
+  a.navigation__link {
+    font-size: 1.5vw;
+    line-height: 2.5vw;
+  }
+
 }

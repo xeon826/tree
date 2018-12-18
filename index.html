@@ -3,9 +3,12 @@
 
 <head>
   <meta charset="UTF-8" name="viewport" content="width=device-width,initial-scale=1.0">
+  <link rel="shortcut icon" type="image/png" href="img/favicon.png"/>
   <title>The Joshua Tree</title>
   <link href="css/style.css" rel="stylesheet">
   <link href="css/hamburgers.min.css" rel="stylesheet">
+  <link href='http://fonts.googleapis.com/css?family=Roboto:100,300,500' rel='stylesheet' type='text/css'>
+  <link href='http://fonts.googleapis.com/css?family=Roboto+Condensed:400,700,300' rel='stylesheet' type='text/css'>
 
 
 
@@ -20,18 +23,21 @@
         <span class="hamburger-inner"></span>
       </span>
     </button>
-    <nav class="navigation">
-      <a class="navigation__link" href="#top">Home</a>
-      <a class="navigation__link" href="#about">About</a>
-      <a class="navigation__link" href="#services">Services</a>
-      <a class="navigation__link logo" href="#"><img src="img/tree--white-blue.png"></a>
-      <a class="navigation__link" href="#works">Works</a>
-      <a class="navigation__link" href="#team">Team</a>
-      <a class="navigation__link" href="#contact">Contact</a>
-    </nav>
+    <div class="navigation">
+      <ul class="navigation-container">
+        <li><a class="navigation__link" href="#top">Home</a></li>
+        <li><a class="navigation__link" href="#about">About</a></li>
+        <li><a class="navigation__link" href="#services">Services</a></li>
+        <li class="logo"><a class="navigation__link logo__anchor" href="#"><img src="img/tree--white-blue.png"></a></li>
+        <li><a class="navigation__link" href="#works">Works</a></li>
+        <li><a class="navigation__link" href="#skills">Skills</a></li>
+        <li><a class="navigation__link" href="#contact">Contact</a></li>
+      </ul>
+    </div>
   </header>
   <div class="tree-container tree-container--mobile centered-relative">
     <img id="tree" class="tree-container__tree animation-paused pan-animation" src="img/tree--with-logo.png">
+    <div class="overlay animation-paused"></div>
     <div class="box draw box--red animation-paused">
       <h3>+ Front End Coder</h3>
       <p class="">The philosophy is simple. I place the concerns of your clients at the center of the user experience.</p>
@@ -53,14 +59,14 @@
     <h2 class="tree-container__header pan-animation pan-animation--third-header animation-paused">“The best programmer I know.” </br><small>–Matt Mckenna</small></h2>
     <h2 class="tree-container__header pan-animation pan-animation--fourth-header animation-paused">“Leave it better than you found it.” </br></small>–Bruce A. Nordstrom</small></h2>
   </div>
-  <section class="about section">
+  <section id="about" class="about section">
     <h2 class="section__header">Joshua Wilkeson</br>Web+Design+Development</h2>
     <p class="section__paragraph">
-      Since 2009, I've worked as part of companies and as a freelancer, developing websites and applications.
+      Since 2009, I've worked as part of teams and as a freelancer, developing websites and applications.
     </p>
     <p class="section__paragraph">
-      Within a relatively short amount of time, I established a reputation for delivering uniquely styled with well-planned user experience design.
-      I'm a programmer/web-designer who specializes in developing customized websites that are both functional and highly presentable.
+      Within a relatively short amount of time, I established a reputation for delivering uniquely styled UI's with well-planned user experience design. I'm a programmer/web-designer who specializes in developing customized websites that are both functional
+      and highly presentable.
     </p>
     <p class="section__paragraph">
       Much like the Joshua Tree, I'm optimistic that I can help your business grow and take root.
@@ -72,7 +78,7 @@
       </div>
     </div>
   </section>
-  <section class="services section">
+  <section id="services" class="services section">
     <h2 class="section__header">Services / What I do</h2>
     <p class="section__paragraph">
       I provide the following services - web design, front-end web development, back-end system development and integration, mobile application development and search engine optimization (SEO).
@@ -121,7 +127,7 @@
       </div>
     </div>
   </section>
-  <section class="works section">
+  <section id="works" class="works section">
     <h2 class="section__header">Works / What I've done</h2>
     <p class="section__paragraph">
       I've completed several works over the years. The following is by no means a comprehensive list but are what I've chosen to show case the various client I've had over the years.
@@ -151,31 +157,50 @@
       </div>
     </div>
   </section>
-  <section class="founder section">
-    <h2 class="section__header">Founder</h2>
-    <p class="section__paragraph">
-      Say hello to Joshua, the founder. An individual with a great passion for web development.
-    </p>
-    <span class="founder-container">
-      <div class="circle">
-      </div>
-    </span>
-    <div class="place-holder">
-      <div class="section__quote">
-        <div class="quote">
-          If you do it right, it will last forever.</br>
-          <small>George Nelson</small>
-        </div>
+  <section id="skills" class="skills section">
+    <h2 class="section__header">Skills</h2>
+    <h3>HTML 5</h3>
+    <div class="skillbar" data-percent="95%">
+      <div class="skill">50%</div>
+    </div>
+    <h3>CSS 3</h3>
+    <div class="skillbar" data-percent="90%">
+      <div class="skill">55%</div>
+    </div>
+    <h3>Javascript</h3>
+    <div class="skillbar" data-percent="87%">
+      <div class="skill">50%</div>
+    </div>
+    <h3>PHP 7</h3>
+    <div class="skillbar" data-percent="85%">
+      <div class="skill">50%</div>
+    </div>
+    <h3>SQL</h3>
+    <div class="skillbar" data-percent="80%">
+      <div class="skill">55%</div>
+    </div>
+    <h3>Symfony</h3>
+    <div class="skillbar" data-percent="80%">
+      <div class="skill">45%</div>
+    </div>
+    <h3>Wordpress</h3>
+    <div class="skillbar" data-percent="90%">
+      <div class="skill">45%</div>
+    </div>
+    <div class="section__quote">
+      <div class="quote">
+        If you do it right, it will last forever.</br>
+        <small>George Nelson</small>
       </div>
     </div>
   </section>
-  <section class="contact section">
-    <h2 class="section__header">Contact/I'd love to hear from you</h2>
-    <h4 class="seciont__header">
+  <section id="contact" class="contact section">
+    <h2 class="section__header">Contact / I'd love to hear from you</h2>
+    <h4 class="">
       Address
     </h4>
     <p>Saint Louis, MO</p>
-    <h4 class="seciont__header">
+    <h4 class="">
       Email
     </h4>
     <p>admin@thejoshuatree.io</p>
