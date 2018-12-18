@@ -911,7 +911,59 @@ a.navigation__link img {
 }
 
 .box--back-end>div {
-  background-image: url('../img/paint-brush.png')
+  background-image: url('../img/monitor.png');
+  z-index: 2;
+}
+.box--back-end .code {
+  position: absolute;
+  background: rgba(0,0,0,0);
+  font-family: courier new;
+  top: 12%;
+  width: 50%;
+  height: 0;
+  font-size: 5px;
+  text-align: left;
+  z-index: 1;
+  transform: translateY(-50%);
+  overflow: hidden;
+  line-height: 10px;
+  color: green !important;
+  height: 100%;
+  animation-duration: 3.5s;
+  animation-name: code;
+  animation-timing-function: steps();
+  animation-iteration-count: infinite;
+  /* animation-fill-mode: forwards; */
+}
+@keyframes code {
+  0% {
+    top: 100%;
+  }
+  25% {
+    top: 75%;
+  }
+  50% {
+    top: 50%;
+  }
+  75% {
+    top: 25%;
+  }
+  100% {
+    top: 0%;
+  }
+}
+div.screen {
+  overflow: hidden;
+  position: absolute;
+  border-radius: 10px;
+  overflow-x: hidden;
+  top: -63%;
+  right: 0;
+  left: 0;
+  bottom: 0;
+  height: 15%;
+  width: 53%;
+  margin: auto;
 }
 
 @media screen and (max-width: 1200px) {
