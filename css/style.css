@@ -368,6 +368,10 @@ a.navigation__link img {
 .founder .section__quote {
   background: linear-gradient( rgba(0, 0, 250, 0.25), rgba(0, 0, 0, 0.45)), url('../img/tree_second.png');
 }
+.contact .section__quote {
+  background: linear-gradient( rgba(0, 0, 250, 0.25), rgba(0, 0, 0, 0.45)), url('../img/bottom_image.jpg');
+}
+
 
 .quote {
   border-top: 1px dashed white;
@@ -675,6 +679,9 @@ a.navigation__link img {
 }
 
 @media screen and (max-width: 768px) {
+  .overlay {
+    display: none;
+  }
   h4 {
     font-size: 4vw;
   }
