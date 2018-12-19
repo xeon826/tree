@@ -17,7 +17,7 @@ var minimizeHeader = () => {
 }
 
 var treeEvents = () => {
-  $('body').imagesLoaded(animateTree);
+  $('.tree-container').imagesLoaded(animateTree);
   $('#tree').on("animationend webkitAnimationEnd oAnimationEnd MSAnimationEnd", fadeBoxesIn)
     .on("animationstart webkitAnimationStart oAnimationStart MSAnimationStart", hideBoxes);
   $(window).focus(animateTree);
