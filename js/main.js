@@ -1,11 +1,29 @@
 $(document).ready(function() {
   // $('html').scrollTop(4400);
-  treeEvents();
   hamburger();
   parallax();
   skillBar();
   minimizeHeader();
+  lazyLoad();
 })
+
+var lazyLoad = () => {
+  $('.tree-container').imagesLoaded({
+    background: '*'
+  }).progress(function(instance, image) {
+    var i = instance['progressedCount'];
+    $('.percent-loaded').text(i * 33 + '%');
+    $('.loading-bar').css('width', i * 33 + '%');
+    if (i == 3) {
+      fadeBoxesIn();
+      $('.tree-m').addClass('tree-m--reveal');
+      $('.splash-screen').remove();
+      $('.section__quote').each(function() {
+        $(this).css('background', $(this).data('background'));
+      })
+    }
+  })
+}
 var minimizeHeader = () => {
   $(window).scroll(function() {
     if ($(this).scrollTop() > 700) {
@@ -14,13 +32,6 @@ var minimizeHeader = () => {
       $('header.minimized').removeClass('minimized');
     }
   })
-}
-
-var treeEvents = () => {
-  $('.tree-container').imagesLoaded(animateTree);
-  $('#tree').on("animationend webkitAnimationEnd oAnimationEnd MSAnimationEnd", fadeBoxesIn)
-    .on("animationstart webkitAnimationStart oAnimationStart MSAnimationStart", hideBoxes);
-  $(window).focus(animateTree);
 }
 
 var parallax = () => {
@@ -43,11 +54,6 @@ var hamburger = () => {
   })
 }
 
-var hideBoxes = () => {
-  $('.tree-container .box').addClass('hidden').removeClass('box--opaque');
-  $(window).on('scroll', getBoxes).trigger('scroll');
-}
-
 var boxOpacity = () => {
   var mX, mY, distance;
   $(document).on('mousemove', (e) => {
@@ -60,24 +66,16 @@ var boxOpacity = () => {
   });
 }
 
-var animateTree = () => {
-  $('.tree-container *').removeClass('animation-paused');
-}
-
 var fadeBoxesIn = () => {
-  $('.tree-container .box').removeClass('hidden');
-  $(window).trigger('scroll');
-  $('.navigation__link[href="#works"]').click(getBoxes);
-}
-
-var getBoxes = () => {
-  var time = 300;
-  $('.box').not('.box--opaque').not('.hidden').each((index, obj) => {
-    $(obj).removeClass('hidden');
-    if ($(obj).offset().top < $(window).scrollTop() + $(window).innerHeight())
-      setTimeout(() => $(obj).addClass('box--opaque'), time * index);
+  // $('.tree-container .box').addClass('box--opaque');
+  $('.tree-container .box').each(function(i, obj) {
+    var time = i * 500;
+    // setTimeout(time, () => {
+    //   $(this).addClass('box--opaque');
+    // })
   })
 }
+
 
 function calculateDistance(elem, mouseX, mouseY) {
   return Math.floor(Math.sqrt(Math.pow(mouseX - (elem.offset().left + (elem.width() / 2)), 2) + Math.pow(mouseY - (elem.offset().top + (elem.height() / 2)), 2)));
