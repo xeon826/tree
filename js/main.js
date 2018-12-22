@@ -10,19 +10,9 @@ $(document).ready(function() {
 var lazyLoad = () => {
   $('.tree-container').imagesLoaded({
     background: '*'
-  }).progress(function(instance, image) {
-    var i = instance['progressedCount'];
-    $('.percent-loaded').text(i * 33 + '%');
-    $('.loading-bar').css('width', i * 33 + '%');
-    if (i == 3) {
-      fadeBoxesIn();
-      $('.tree-m').addClass('tree-m--reveal');
-      $('.splash-screen').remove();
-      $('.section__quote').each(function() {
-        $(this).css('background', $(this).data('background'));
-      })
-    }
-  })
+  }).done(function() {
+    $('.tree-container .tree-m .box').addClass('box--opaque');
+  });
 }
 var minimizeHeader = () => {
   $(window).scroll(function() {
@@ -67,13 +57,18 @@ var boxOpacity = () => {
 }
 
 var fadeBoxesIn = () => {
-  // $('.tree-container .box').addClass('box--opaque');
   $('.tree-container .box').each(function(i, obj) {
-    var time = i * 500;
-    // setTimeout(time, () => {
-    //   $(this).addClass('box--opaque');
-    // })
+    setTimeout(() => {
+      $(this).addClass('box--opaque')
+    }, i * 1000)
   })
+  $(window).scroll(function() {
+    $('.services .box').each(function() {
+      if ($(this).offset().top < $(window).scrollTop() + $(window).innerHeight()) {
+        $(this).addClass('box--opaque');
+      }
+    })
+  }).trigger('scroll');
 }
 
 
@@ -86,7 +81,7 @@ var skillBar = () => {
     if ($('.skills').offset().top < $(window).scrollTop() + $(window).innerHeight()) {
       animateSkillBar();
     }
-  })
+  }).trigger('scroll');
   $('.navigation__link[href="#skills"]').click(animateSkillBar);
 }
 var animateSkillBar = () => {
@@ -96,4 +91,42 @@ var animateSkillBar = () => {
       width: $(this).attr('data-percent')
     }, 3000);
   });
+}
+
+function preventDefault(e) {
+  e = e || window.event;
+  if (e.preventDefault)
+    e.preventDefault();
+  e.returnValue = false;
+}
+
+function preventDefaultForScrollKeys(e) {
+  var keys = {
+    37: 1,
+    38: 1,
+    39: 1,
+    40: 1
+  };
+  if (keys[e.keyCode]) {
+    preventDefault(e);
+    return false;
+  }
+}
+
+function disableScroll() {
+  if (window.addEventListener) // older FF
+    window.addEventListener('DOMMouseScroll', preventDefault, false);
+  window.onwheel = preventDefault; // modern standard
+  window.onmousewheel = document.onmousewheel = preventDefault; // older browsers, IE
+  window.ontouchmove = preventDefault; // mobile
+  document.onkeydown = preventDefaultForScrollKeys;
+}
+
+function enableScroll() {
+  if (window.removeEventListener)
+    window.removeEventListener('DOMMouseScroll', preventDefault, false);
+  window.onmousewheel = document.onmousewheel = null;
+  window.onwheel = null;
+  window.ontouchmove = null;
+  document.onkeydown = null;
 }

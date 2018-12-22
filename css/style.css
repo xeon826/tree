@@ -21,13 +21,13 @@ header {
   top: 0;
   left: 0;
   z-index: 4;
-  background: #222222;
+  /* background: #222222; */
   transition: 1s;
   width: 100%;
   height: 5vw;
 }
 
-h4 {
+h4, h3 {
   font-family: 'Roboto Condensed';
   font-size: 2vw;
 }
@@ -61,6 +61,8 @@ h4 {
 }
 
 .navigation {
+  background: #1c1c1c !important;
+  box-shadow: 3px 3px 3px black !important;
   display: flex;
   align-items: center;
   align-content: center;
@@ -180,9 +182,7 @@ a.navigation__link img {
   font: 18px/24px "Roboto", Helvetica, Helvetica Neue, Arial;
   font-size: 1.3vw;
   font-weight: 400;
-  color: #ffffff;
 }
-
 .box--red, .box--green {
   top: 5vw;
 }
@@ -195,33 +195,21 @@ a.navigation__link img {
   left: 14vw;
 }
 
-.box--red p {
-  background: #C91115;
-}
 
 .box--blue {
   left: 12.5vw;
 }
 
-.box--blue p {
-  background: #6360AA;
-}
 
 .box--green {
   right: 14vw;
 }
 
-.box--green p {
-  background: #6EA131;
-}
 
 .box--light-blue {
   right: 12.5vw;
 }
 
-.box--light-blue p {
-  background: #2d87c6;
-}
 
 .services-container {
   display: flex;
@@ -251,36 +239,15 @@ a.navigation__link img {
   color: white;
   flex-grow: 100;
 }
-
-.tree-b, .tree-f, .tree-m {
-  width: 100%;
-  height: 100%;
-  background-size: 100%;
-  position: absolute;
-  background-repeat: no-repeat;
-  top: 0;
-  left: 0;
-  background-position: top;
-}
-.tree-b {
-  background-image: url('../img/tree-b2.jpg');
-  z-index: 1;
-}
 .tree-m {
-  background-image: url('../img/tree-m.png');
-  background-size: 5%;
-  background-position-y: 300%;
-  transition: 4s;
-  z-index: 2;
-}
-.tree-m--reveal {
+  width: 100vw;
+  height: 100vh;
+  position: relative;
+  background-repeat: no-repeat;
   background-size: 50%;
-  background-position-y: 75%;
-  opacity: 1;
-}
-.tree-f {
-  background-image: url('../img/tree-f2.gif');
-  z-index: 3;
+  background-position-x: 24vw;
+  background-position-y: 10vh;
+  background-image: url('../img/tree-m.png');
 }
 
 @media screen and (min-width: 768px) {
@@ -830,8 +797,10 @@ div.screen {
 .box--seo>div:nth-child(2) {
   position: absolute;
   /* 109px */
-  width: 8vw;
-  height: 8vw;
+  /* width: 18vw;
+  height: 18vw; */
+  width: 7vw;
+  height: 7vw;
   border-radius: 100%;
   padding: 0;
   background-size: 270%;
@@ -842,8 +811,8 @@ div.screen {
   animation-name: search;
   animation-duration: 4s;
   animation-iteration-count: infinite;
-  background-position-x: -11%;
-  background-position-y: 37.5%;
+  background-position-x: -21%;
+  background-position-y: 30.5%;
   box-shadow: inset 0 0 10px #A0A0A0;
   z-index: 2;
 }
@@ -852,26 +821,26 @@ div.screen {
   0% {
     top: 5%;
     left: -5%;
-    background-position-x: -11%;
-    background-position-y: 37.5%;
+    background-position-x: -21%;
+    background-position-y: 30.5%;
   }
   25% {
     top: 10%;
     left: -5%;
-    background-position-x: -11%;
+    background-position-x: -21%;
     background-position-y: 74%;
   }
   50% {
     top: 10%;
     left: 25%;
-    background-position-x: 75%;
+    background-position-x: 55%;
     background-position-y: 74%;
   }
   75% {
     top: 5%;
     left: -5%;
-    background-position-x: -11%;
-    background-position-y: 37.5%;
+    background-position-x: -21%;
+    background-position-y: 30.5%;
   }
 }
 
@@ -932,7 +901,13 @@ div.screen {
   position:fixed;
   width: 100vw;
   height: 100vw;
-  background:white;
+  background-image: url('../img/tree.svg');
+  background-color: white;
+  /* background-position: -30%; */
+  background-position-y: 33%;
+  background-position-x: 100%;
+  background-repeat: no-repeat;
+  background-size: 30%;
   z-index: 10;
 }
 
