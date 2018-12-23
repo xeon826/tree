@@ -6,7 +6,7 @@ $(document).ready(function() {
   skillBar();
   minimizeHeader();
   lazyLoad();
-  fadeServicessIn();
+  fadeServicesIn();
 })
 function navigationTriggerScroll() {
   $('#services').click(() => {
