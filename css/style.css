@@ -367,7 +367,7 @@ a.navigation__link img {
   height: 40vw;
 }
 
-.section__quote {
+.section__quote, .map-container {
   width: 100vw;
   height: 40vw;
   margin-left: -5vw;
@@ -376,6 +376,9 @@ a.navigation__link img {
   left: 0;
   background-size: 100% !important;
   background-repeat: no-repeat !important;
+}
+.map-container {
+  overflow: hidden;
 }
 
 .quote {
@@ -927,7 +930,7 @@ div.screen {
   }
 }
 
-.contact.section h4, .contact.section p {
+.contact.section h4, .contact.section p{
   width: 50%;
   font-family: 'Roboto Condensed';
   display: block;
@@ -936,17 +939,10 @@ div.screen {
   position: relative;
 }
 
-.contact.section p {
-  font-size: 2.0vw;
-}
-
 @media screen and (max-width: 768px) {
   .box--seo>div:nth-child(2) {
     width: 14vw;
     height: 14vw;
-  }
-  .contact.section p {
-    font-size: 4.5vw;
   }
 }
 
