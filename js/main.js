@@ -18,17 +18,18 @@ var lazyLoad = () => {
   $('.tree-container').imagesLoaded({
     background: '*'
   }).done(function() {
-    $('.tree-m').addClass('tree-m--full')
-      .on('webkitTransitionEnd otransitionend oTransitionEnd msTransitionEnd transitionend', function() {
-        // $('.tree-container .box').addClass('box--opaque');
-        $('.tree-container .box').each(function(i, obj) {
-          setTimeout(() => {
-            $(this).addClass('box--opaque');
-          }, 500 * i)
-        })
+    $('.tree-m').animate({
+      'background-size': '50%',
+      'background-position-y': '10vh'
+    }, 1000, function() {
+      $('.tree-container .box').each(function(i, obj) {
+        setTimeout(() => {
+          $(this).addClass('box--opaque');
+        }, 500 * i)
       });
-    $('.section__quote').each(function() {
-      $(this).css('background', $(this).data('background'));
+      $('.section__quote').each(function() {
+        $(this).css('background', $(this).data('background'));
+      })
     })
   });
 }
@@ -60,8 +61,8 @@ var parallax = () => {
   $(window).scroll(function() {
     var scrollTop = $(window).scrollTop();
     $('.section__quote').each(function() {
-    var distance = scrollTop - $(this).offset().top + $(this).height()*2;
-      $(this).css('background-position-y', (distance/65)+'%')
+      var distance = scrollTop - $(this).offset().top + $(this).height() * 2;
+      $(this).css('background-position-y', (distance / 65) + '%')
     })
   });
 }

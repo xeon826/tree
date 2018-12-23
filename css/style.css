@@ -284,14 +284,14 @@ a.navigation__link img {
   /* animation-duration: 5s; */
   /* animation-iteration-count: infinite; */
   /* animation-fill-mode: forwards; */
-  transition: background 1s;
-  -webkit-transition: background 1s;
+  /* transition: background 1s;
+  -webkit-transition: background 1s; */
 }
 
-.tree-m--full {
+/* .tree-m--full {
   background-size: 50% !important;
   background-position-y: 10vh !important;
-}
+} */
 
 .animation-paused {
   animation-play-state: paused;
