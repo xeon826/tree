@@ -33,7 +33,7 @@ h4, h3 {
 }
 
 .hamburger-inner:before, .hamburger-inner:after, .hamburger-inner {
-  background-color: white !important;
+  background-color: black !important;
 }
 
 .hidden {
@@ -281,6 +281,7 @@ a.navigation__link img {
   /* animation-iteration-count: infinite; */
   /* animation-fill-mode: forwards; */
   transition: 1s;
+  -webkit-transition: 1s;
 }
 
 .tree-m--full {
@@ -508,7 +509,7 @@ a.navigation__link img {
   }
   header {
     width: 30%;
-    left: -30%;
+    left: -32%;
     height: 100%;
     transition: 1s;
   }
@@ -907,16 +908,6 @@ div.screen {
   }
 }
 
-@media screen and (max-width: 768px) {
-  .box--seo>div:nth-child(2) {
-    width: 14vw;
-    height: 14vw;
-  }
-  .contact.section p {
-    font-size: 4.5vw;
-  }
-}
-
 .contact.section h4, .contact.section p {
   width: 50%;
   font-family: 'Roboto Condensed';
@@ -927,8 +918,18 @@ div.screen {
 }
 
 .contact.section p {
-  font-size: 2.5vw;
+  font-size: 2.0vw;
 }
+@media screen and (max-width: 768px) {
+  .box--seo>div:nth-child(2) {
+    width: 14vw;
+    height: 14vw;
+  }
+  .contact.section p {
+    font-size: 4.5vw;
+  }
+}
+
 
 .green {
   color: green;
@@ -941,6 +942,7 @@ div.screen {
 
 .skill {
   background: linear-gradient(90deg, #81EBF5 0%, #31B1CF 100%);
+  font-family: 'Roboto Condensed';
   text-align: right;
   padding-right: 20px;
   line-height: 30px;
