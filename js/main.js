@@ -1,18 +1,45 @@
 $(document).ready(function() {
   // $('html').scrollTop(4400);
+  navigationTriggerScroll();
   hamburger();
   parallax();
   skillBar();
   minimizeHeader();
   lazyLoad();
+  fadeServicessIn();
 })
+var navigationTriggerScroll = () => {
+  $('#services').click(() => {
+    $(window).trigger('scroll');
+  });
+}
 
 var lazyLoad = () => {
   $('.tree-container').imagesLoaded({
     background: '*'
   }).done(function() {
-    $('.tree-container .tree-m .box').addClass('box--opaque');
+    $('.tree-m').addClass('tree-m--full')
+      .on('webkitTransitionEnd otransitionend oTransitionEnd msTransitionEnd transitionend', function() {
+        // $('.tree-container .box').addClass('box--opaque');
+        $('.tree-container .box').each(function(i, obj) {
+          setTimeout(() => {
+            $(this).addClass('box--opaque');
+          }, 500 * i)
+        })
+      });
+    $('.section__quote').each(function() {
+      $(this).css('background', $(this).data('background'));
+    })
   });
+}
+var fadeServicessIn = () => {
+  $(window).scroll(function() {
+    $('.services .box').each(function() {
+      if ($(this).offset().top < $(window).scrollTop() + $(window).innerHeight()) {
+        $(this).addClass('box--opaque');
+      }
+    })
+  }).trigger('scroll');
 }
 var minimizeHeader = () => {
   $(window).scroll(function() {
@@ -25,15 +52,17 @@ var minimizeHeader = () => {
 }
 
 var parallax = () => {
+  // alert($(document).height());
   var initScrollTop = $(window).scrollTop();
   $('.section__quote').css({
     'background-position-y': (initScrollTop / 65) + '%'
   });
   $(window).scroll(function() {
     var scrollTop = $(window).scrollTop();
-    $('.section__quote').css({
-      'background-position-y': (scrollTop / 65) + '%'
-    });
+    $('.section__quote').each(function() {
+    var distance = scrollTop - $(this).offset().top + $(this).height()*2;
+      $(this).css('background-position-y', (distance/65)+'%')
+    })
   });
 }
 
