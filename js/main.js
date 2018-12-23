@@ -10,7 +10,7 @@ $(document).ready(function() {
   fadeServicesIn();
 })
 function navigationTriggerScroll() {
-  $('#services').click(() => {
+  $('#services').click(function() {
     $(window).trigger('scroll');
   });
 }
