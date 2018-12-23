@@ -1,5 +1,6 @@
 $(document).ready(function() {
   // $('html').scrollTop(4400);
+  console.log('document ready');
   navigationTriggerScroll();
   hamburger();
   parallax();
@@ -60,6 +61,7 @@ function minimizeHeader() {
 }
 
 function parallax() {
+  console.log('parallax');
   var initScrollTop = $(window).scrollTop();
   $('.section__quote').css({
     'background-position-y': (initScrollTop / 65) + '%'
