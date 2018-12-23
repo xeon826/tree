@@ -285,6 +285,7 @@ a.navigation__link img {
   /* animation-iteration-count: infinite; */
   /* animation-fill-mode: forwards; */
   transition: background 1s;
+  -webkit-transition: background 1s;
 }
 
 .tree-m--full {
