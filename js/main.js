@@ -8,23 +8,24 @@ $(document).ready(function() {
   lazyLoad();
   fadeServicessIn();
 })
-var navigationTriggerScroll = () => {
+function navigationTriggerScroll() {
   $('#services').click(() => {
     $(window).trigger('scroll');
   });
 }
 
-var lazyLoad = () => {
+function lazyLoad() {
   $('.tree-container').imagesLoaded({
     background: '*'
   }).done(function() {
     $('.tree-m').animate({
       'background-size': '50%',
-      'background-position-y': '10vh'
+      'background-position-y': '10vh',
+      '-webkit-background-position-y': '10vh',
     }, 1000, function() {
       $('.tree-container .box').each(function(i, obj) {
-        setTimeout(() => {
-          $(this).addClass('box--opaque');
+        setTimeout(function() {
+          $(obj).addClass('box--opaque');
         }, 500 * i)
       });
       $('.section__quote').each(function() {
@@ -33,7 +34,8 @@ var lazyLoad = () => {
     })
   });
 }
-var fadeServicessIn = () => {
+
+function fadeServicesIn() {
   $(window).scroll(function() {
     $('.services .box').each(function() {
       if ($(this).offset().top < $(window).scrollTop() + $(window).innerHeight()) {
@@ -42,7 +44,8 @@ var fadeServicessIn = () => {
     })
   }).trigger('scroll');
 }
-var minimizeHeader = () => {
+
+function minimizeHeader() {
   $(window).scroll(function() {
     if ($(this).scrollTop() > 700) {
       $('header:not(.minimized)').addClass('minimized');
@@ -52,8 +55,7 @@ var minimizeHeader = () => {
   })
 }
 
-var parallax = () => {
-  // alert($(document).height());
+function parallax() {
   var initScrollTop = $(window).scrollTop();
   $('.section__quote').css({
     'background-position-y': (initScrollTop / 65) + '%'
@@ -67,29 +69,29 @@ var parallax = () => {
   });
 }
 
-var hamburger = () => {
+function hamburger() {
   $('body').on('click', '.hamburger, header.is-active .navigation__link', function() {
     $('.hamburger').toggleClass('is-active');
     $('header').toggleClass('is-active');
   })
 }
 
-var boxOpacity = () => {
+function boxOpacity() {
   var mX, mY, distance;
-  $(document).on('mousemove', (e) => {
+  $(document).on('mousemove', function(e) {
     mX = e.pageX;
     mY = e.pageY;
-    $('.box').each((i, obj) => {
+    $('.box').each(function(i, obj) {
       distance = calculateDistance($(obj), mX, mY);
       $(obj).css('opacity', 1 - distance / $(window).innerWidth());
     })
   });
 }
 
-var fadeBoxesIn = () => {
+function fadeBoxesIn() {
   $('.tree-container .box').each(function(i, obj) {
-    setTimeout(() => {
-      $(this).addClass('box--opaque')
+    setTimeout(function() {
+      $(obj).addClass('box--opaque')
     }, i * 1000)
   })
   $(window).scroll(function() {
@@ -106,7 +108,7 @@ function calculateDistance(elem, mouseX, mouseY) {
   return Math.floor(Math.sqrt(Math.pow(mouseX - (elem.offset().left + (elem.width() / 2)), 2) + Math.pow(mouseY - (elem.offset().top + (elem.height() / 2)), 2)));
 }
 
-var skillBar = () => {
+function skillBar() {
   $(window).scroll(function() {
     if ($('.skills').offset().top < $(window).scrollTop() + $(window).innerHeight()) {
       animateSkillBar();
@@ -114,7 +116,8 @@ var skillBar = () => {
   }).trigger('scroll');
   $('.navigation__link[href="#skills"]').click(animateSkillBar);
 }
-var animateSkillBar = () => {
+
+function animateSkillBar() {
   $('.skill-bar').each(function() {
     $(this).children('.skill').text($(this).data('percent'));
     $(this).find('.skill').animate({

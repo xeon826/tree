@@ -270,22 +270,15 @@ a.navigation__link img {
   height: 100%;
   position: relative;
   background-repeat: no-repeat;
-  /* from */
   background-position-x: 49%;
   background-size: 1%;
   background-position-y: 90vh;
-  -webkit-background-position-y: 90vh;
-  /* to  */
-  /* background-size: 50%;
-  background-position-x: 49%;
-  background-position-y: 10vh; */
   background-image: url('../img/tree-m.png');
-  /* animation-name: grow; */
-  /* animation-duration: 5s; */
-  /* animation-iteration-count: infinite; */
-  /* animation-fill-mode: forwards; */
-  /* transition: background 1s;
-  -webkit-transition: background 1s; */
+  -webkit-background-repeat: no-repeat;
+  -webkit-background-position-x: 49%;
+  -webkit-background-size: 1%;
+  -webkit-background-position-y: 90vh;
+  -webkit-background-image: url('../img/tree-m.png');
 }
 
 /* .tree-m--full {
