@@ -33,7 +33,7 @@ h1 {
   width: 100%;
   text-align: center;
   transform: translateX(-50%);
-  top: 10%;
+  top: 39%;
   font-family: 'Roboto Condensed';
   display: none;
 }
@@ -45,6 +45,9 @@ h4, h3 {
 
 .hamburger-inner:before, .hamburger-inner:after, .hamburger-inner {
   background-color: black !important;
+}
+.hamburger.is-active .hamburger-inner:before, .hamburger.is-active:after, .hamburger.is-active .hamburger-inner {
+  background-color: white !important;
 }
 
 .hidden {
@@ -162,7 +165,7 @@ a.navigation__link img {
   background-image: url('../img/bg.jpg');
   background-position: center;
   background-size: cover;
-   -webkit-clip-path: polygon(0 0, 100% 0, 100% 90%, 50% 100%, 0 90%);
+  -webkit-clip-path: polygon(0 0, 100% 0, 100% 90%, 50% 100%, 0 90%);
   clip-path: polygon(0 0, 100% 0, 100% 90%, 50% 100%, 0 90%);
   left: 0;
   width: 100%;
@@ -385,8 +388,7 @@ a.navigation__link img {
   position: relative;
   margin: auto;
   text-align: center;
-  /* background: none #141414 !important; */
-  background:white;
+  background: white;
   display: block;
 }
 
@@ -492,8 +494,15 @@ a.navigation__link img {
 }
 
 @media screen and (max-width: 768px) {
+  .quote {
+    padding: 2vw;
+    font-weight: 500;
+    font-size: 3.5vw;
+    width: 50%;
+  }
   h1 {
     display: block;
+    top: 10%;
   }
   .overlay {
     display: none;
@@ -586,6 +595,7 @@ a.navigation__link img {
     line-height: 4vw;
   }
 }
+
 .services-container__box {
   top: 0;
   left: 0;
@@ -929,6 +939,7 @@ div.screen {
 .contact.section p {
   font-size: 2.0vw;
 }
+
 @media screen and (max-width: 768px) {
   .box--seo>div:nth-child(2) {
     width: 14vw;
@@ -938,7 +949,6 @@ div.screen {
     font-size: 4.5vw;
   }
 }
-
 
 .green {
   color: green;
@@ -1017,7 +1027,7 @@ div.screen {
   .box h3, .box p {
     line-height: 2vw;
   }
-  .skill-bar .skill{
+  .skill-bar .skill {
     height: 2vw;
     border-radius: 2vw;
     font-size: 1vw;

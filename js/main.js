@@ -2,12 +2,13 @@ $(document).ready(function() {
   // $('html').scrollTop(4400);
   navigationTriggerScroll();
   hamburger();
-  parallax();
   skillBar();
   minimizeHeader();
   lazyLoad();
+  parallax();
   fadeServicesIn();
 })
+
 function navigationTriggerScroll() {
   $('#services').click(function() {
     $(window).trigger('scroll');
@@ -60,14 +61,14 @@ function minimizeHeader() {
 }
 
 function parallax() {
-  var initScrollTop = $(window).scrollTop();
-  $('.section__quote').css({
-    'background-position-y': (initScrollTop / 65) + '%'
-  });
+  var mobile = 0;
+  if ($(window).innerWidth() < 500) {
+    mobile = 500;
+  }
   $(window).scroll(function() {
     var scrollTop = $(window).scrollTop();
     $('.section__quote').each(function() {
-      var distance = scrollTop - $(this).offset().top + $(this).height() * 5;
+      var distance = scrollTop - $(this).offset().top + $(this).height() * 2 + mobile;
       $(this).css('background-position-y', (distance / 65) + '%')
     })
   });
