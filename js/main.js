@@ -114,7 +114,7 @@ var skillBar = () => {
   $('.navigation__link[href="#skills"]').click(animateSkillBar);
 }
 var animateSkillBar = () => {
-  $('.skillbar').each(function() {
+  $('.skill-bar').each(function() {
     $(this).children('.skill').text($(this).data('percent'));
     $(this).find('.skill').animate({
       width: $(this).attr('data-percent')
