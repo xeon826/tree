@@ -26,7 +26,17 @@ header {
   height: 5vw;
 }
 
-h1, h2, h3, h4 {}
+h1 {
+  position: absolute;
+  color: white;
+  left: 50%;
+  width: 100%;
+  text-align: center;
+  transform: translateX(-50%);
+  top: 10%;
+  font-family: 'Roboto Condensed';
+  display: none;
+}
 
 h4, h3 {
   font-family: 'Roboto Condensed';
@@ -482,6 +492,9 @@ a.navigation__link img {
 }
 
 @media screen and (max-width: 768px) {
+  h1 {
+    display: block;
+  }
   .overlay {
     display: none;
   }

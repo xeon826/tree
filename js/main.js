@@ -29,7 +29,11 @@ function lazyLoad() {
         }, 500 * i)
       });
       $('.section__quote').each(function() {
-        $(this).css('background', $(this).data('background'));
+        if ($(window).innerWidth() > 600) {
+          $(this).css('background', $(this).data('background'));
+        } else {
+          $(this).css('background', $(this).data('srcset-background'));
+        }
       })
     })
   });
@@ -63,7 +67,7 @@ function parallax() {
   $(window).scroll(function() {
     var scrollTop = $(window).scrollTop();
     $('.section__quote').each(function() {
-      var distance = scrollTop - $(this).offset().top + $(this).height() * 2;
+      var distance = scrollTop - $(this).offset().top + $(this).height() * 5;
       $(this).css('background-position-y', (distance / 65) + '%')
     })
   });
