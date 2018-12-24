@@ -491,7 +491,7 @@ a.navigation__link img {
     font-size: 4vw;
   }
   .section__paragraph {
-    font-size: 3.5vw;
+    font-size: 4.3vw;
     font-weight: 500;
   }
   .section__header {
@@ -503,7 +503,8 @@ a.navigation__link img {
     line-height: 4vw !important;
   }
   .box p {
-    font-size: 2.7vw;
+    font-size: 3.3vw;
+    line-height: 3.5vw !important;
   }
   header {
     width: 30%;
