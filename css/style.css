@@ -411,7 +411,7 @@ a.navigation__link img {
 
 .section__paragraph {
   text-align: center;
-  font-size: 1.5vw;
+  font-size: 1.8vw;
   font-weight: 600;
   margin-bottom: 2vw;
   font-family: 'Roboto Condensed';
@@ -1042,5 +1042,21 @@ div.screen {
   }
   li.logo {
     flex-grow: 2;
+  }
+  .box--back-end .code {
+    top: 43%;
+    width: 80%;
+    font-size: 2vw;
+    line-height: 20px;
+    height: 200%;
+    bottom: -20% !important;
+  }
+  div.screen {
+    top: -48.5%;
+    right: 0;
+    left: 0;
+    bottom: 0;
+    height: 19%;
+    width: 53%;
   }
 }
