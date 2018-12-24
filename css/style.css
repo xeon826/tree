@@ -916,6 +916,9 @@ div.screen {
   margin: auto;
   position: relative;
 }
+.contact.section p {
+  margin-bottom: 2vw;
+}
 
 @media screen and (max-width: 768px) {
   .box--seo>div:nth-child(2) {
