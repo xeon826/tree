@@ -60,7 +60,7 @@ background-color: #00090F !important;
 
 header,
 #header {
-background: -moz-linear-gradient(#333,#141414) transparent !important;
+/* background: -moz-linear-gradient(#333,#141414) transparent !important; */
 }
 
 #header h1 {
@@ -277,7 +277,7 @@ html body [class*="description"]
 /* Also common */
 [class*="content"],
 [class*="container"] {
-background-color: #1c1c1c !important;
+/* background-color: #1c1c1c !important; */
 }
 
 /* Headers, Logos */

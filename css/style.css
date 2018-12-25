@@ -47,7 +47,6 @@ h4, h3 {
   background-color: white !important;
 }
 
-
 .hidden {
   display: none;
 }
@@ -73,8 +72,6 @@ h4, h3 {
 }
 
 .navigation {
-  background: #1c1c1c !important;
-  box-shadow: 3px 3px 3px black !important;
   display: flex;
   align-items: center;
   align-content: center;
@@ -85,6 +82,7 @@ h4, h3 {
 }
 
 .navigation-container {
+  background: rgba(0,0,0,0) !important;
   display: flex;
   width: 65%;
   margin: auto;
@@ -109,29 +107,6 @@ a.navigation__link {
   line-height: 2vw;
   width: 80%;
   margin: auto;
-}
-
-a.navigation__link:not(.logo__anchor)::after, a.navigation__link:not(.logo__anchor)::before {
-  height: 2px;
-  z-index: 1;
-  content: ' ';
-  background: black;
-  width: 100%;
-  transition: 1s;
-  transition-timing-function: ease-out;
-  left: 50%;
-  transform: translateX(-50%);
-  position: absolute;
-}
-
-a.navigation__link:not(.logo__anchor)::before {
-  background: blue;
-  width: 0;
-  z-index: 2;
-}
-
-a.navigation__link:hover:not(.logo__anchor)::before {
-  width: 100%;
 }
 
 li.logo .navigation__link {
@@ -168,7 +143,7 @@ a.navigation__link img {
   left: 0;
   width: 100%;
   height: 56.2vw;
-  margin-top: 4vw;
+  /* margin-top: 4vw; */
   position: relative;
   overflow: hidden;
 }
@@ -188,6 +163,7 @@ a.navigation__link img {
   -webkit-transition: 1s;
   z-index: 2;
 }
+
 .tree-container .box p {
   background: rgba(0, 0, 0, 0.3) !important;
 }
@@ -207,11 +183,11 @@ a.navigation__link img {
 }
 
 .box--red, .box--green {
-  top: 5vw;
+  top: 8vw;
 }
 
 .box--blue, .box--light-blue {
-  top: 25vw;
+  top: 28vw;
 }
 
 .box--red {
@@ -287,7 +263,7 @@ a.navigation__link img {
   background-position-x: 49%;
   background-size: 1%;
   background-position-y: 90vh;
-  background-color: rgba(0,0,0,0) !important;
+  background-color: rgba(0, 0, 0, 0) !important;
   background-image: url('../img/tree-m.png');
   -webkit-background-repeat: no-repeat;
   -webkit-background-position-x: 49%;
@@ -335,6 +311,8 @@ a.navigation__link img {
 
 @media screen and (min-width: 768px) {
   header.minimized {
+    background: #1c1c1c !important;
+    box-shadow: 3px 3px 3px black !important;
     height: 3.8vw;
   }
   .hamburger {
@@ -513,13 +491,18 @@ a.navigation__link img {
     left: -32%;
     height: 100%;
     transition: 1s;
+    background: #1c1c1c !important;
+    box-shadow: 3px 3px 3px black !important;
+  }
+  div.navigation{
+    background: #1c1c1c !important;
   }
   header.is-active {
     left: 0;
   }
   .hamburger {
-    top: 2%;
-    left: 2%;
+    top: 0%;
+    left: 0%;
     position: fixed;
     z-index: 4;
   }
@@ -919,6 +902,7 @@ div.screen {
   margin: auto;
   position: relative;
 }
+
 .contact.section p {
   margin-bottom: 2vw;
 }
@@ -1067,6 +1051,7 @@ div.screen {
     width: 53%;
   }
 }
+
 .banner {
   width: 45vw;
   left: 50%;
