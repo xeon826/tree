@@ -26,7 +26,7 @@ border-color: #000 !important;
 
 /* Try to contrast containers */
 html:root > body > * > * > * > *:not(input):not([onclick]) > div:not(:empty):not([id]) {
-background: none #1c1c1c !important
+/* background: none #1c1c1c !important */
 }
 
 /* :::::::: Text Presentation :::::::: */
@@ -67,7 +67,6 @@ background: -moz-linear-gradient(#333,#141414) transparent !important;
 background-color: transparent !important;
 }
 
-h1,
 h2 {
 background: none #28313E !important;
 border-radius: 5px !important;
@@ -150,7 +149,6 @@ color: #DDD !important;
 }
 
 html body input:not([type="image"]),
-button,
 html body textarea {
 
 background: none #353535 !important;
@@ -178,10 +176,9 @@ html body input[type="radio"] {
 
 /* :::::::: Custom styling :::::::: */
 
-html:root input[type="button"],
 html:root input[type="submit"],
 html:root input[type="reset"],
-html:root button {
+{
 
 color: #EEE !important;
 background-color: #222437 !important;
@@ -190,10 +187,9 @@ background-color: #222437 !important;
 -webkit-box-shadow: inset 0 1px rgba(255,255,255,0.2), inset 0 10px rgba(255,255,255,0.1), inset 0 10px 20px rgba(255,255,255,0.15), inset 0 -15px 30px rgba(0,0,0,0.2) !important;
 }
 
-html:root input[type="button"]:hover,
 html:root input[type="submit"]:hover,
 html:root input[type="reset"]:hover,
-html:root button:hover {
+{
 
 color: #FFF !important;
 background-color: #31344F !important;
@@ -366,12 +362,12 @@ color: #FEFF97 !important;
 /* Make images transparent */
 
 img {
-opacity: .75 !important;
+/* opacity: .75 !important; */
 }
 
 img:hover {
-opacity: 1 !important;
-background-color: #888 !important;
+/* opacity: 1 !important; */
+/* background-color: #888 !important; */
 }
 
 svg {

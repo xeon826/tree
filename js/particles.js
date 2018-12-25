@@ -23,7 +23,7 @@ var pJS = function(tag_id, params) {
         type: 'circle',
         stroke: {
           width: 0,
-          color: '#ff0000'
+          color: '#ffffff'
         },
         polygon: {
           nb_sides: 5
@@ -1561,13 +1561,13 @@ particlesJS("particles-js", {
       }
     },
     "color": {
-      "value": "#000066"
+      "value": "#ffffff"
     },
     "shape": {
       "type": "circle",
       "stroke": {
         "width": 0,
-        "color": "#000000"
+        "color": "#ffffff"
       },
       "polygon": {
         "nb_sides": 5
@@ -1662,4 +1662,4 @@ particlesJS("particles-js", {
   "retina_detect": true
 });
 
-requestAnimationFrame();
+// requestAnimationFrame();

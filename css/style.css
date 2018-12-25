@@ -44,12 +44,9 @@ h4, h3 {
 }
 
 .hamburger-inner:before, .hamburger-inner:after, .hamburger-inner {
-  background-color: black !important;
-}
-
-.hamburger.is-active .hamburger-inner:before, .hamburger.is-active:after, .hamburger.is-active .hamburger-inner {
   background-color: white !important;
 }
+
 
 .hidden {
   display: none;
@@ -163,9 +160,9 @@ a.navigation__link img {
 }
 
 .tree-container {
-  background-image: url('../img/bg.jpg');
+  /* background-image: url('../img/bg.jpg');
   background-position: center;
-  background-size: cover;
+  background-size: cover; */
   -webkit-clip-path: polygon(0 0, 100% 0, 100% 90%, 50% 100%, 0 90%);
   clip-path: polygon(0 0, 100% 0, 100% 90%, 50% 100%, 0 90%);
   left: 0;
@@ -287,6 +284,7 @@ a.navigation__link img {
   background-position-x: 49%;
   background-size: 1%;
   background-position-y: 90vh;
+  background-color: rgba(0,0,0,0) !important;
   background-image: url('../img/tree-m.png');
   -webkit-background-repeat: no-repeat;
   -webkit-background-position-x: 49%;
@@ -349,9 +347,10 @@ a.navigation__link img {
 }
 
 .section__header {
+  /* background: rgba(0,0,0,0) !important; */
   text-align: center;
   display: block;
-  width: 100vw;
+  /* width: 100vw; */
   font-size: 3.66vw;
   top: 120vh;
 }
@@ -627,15 +626,15 @@ a.navigation__link img {
 }
 
 .box--design>div {
-  background-image: url('../img/tree--design.jpg');
+  background-image: url('../img/tree--design.gif');
 }
 
 .box--seo>div {
-  background-image: url('../img/tree--seo.jpg');
+  background-image: url('../img/tree--seo.gif');
 }
 
 .box--front-end>div {
-  background-image: url('../img/laptop.jpg');
+  background-image: url('../img/laptop.gif');
 }
 
 .box--front-end>div>h5 {
@@ -860,6 +859,7 @@ div.screen {
 
 .box--seo>div:nth-child(2) {
   position: absolute;
+  background-image: url('../img/magnifier.jpg');
   /* 109px */
   /* width: 18vw;
   height: 18vw; */
@@ -1063,4 +1063,14 @@ div.screen {
     height: 19%;
     width: 53%;
   }
+}
+.banner {
+  width: 45vw;
+  left: 50%;
+  top: 10%;
+  opacity: 0;
+  border-radius: 100%;
+  transform: translateX(-50%);
+  display: inline-block;
+  position: absolute;
 }
