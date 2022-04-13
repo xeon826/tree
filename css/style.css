@@ -177,6 +177,7 @@ a.navigation__link img {
   opacity: 0;
   position: absolute;
   width: 16vw;
+  pointer-events: none;
 }
 
 .box h3, .box p {
@@ -1065,6 +1066,7 @@ div.screen {
   }
 }
 .banner {
+  pointer-events: none;
   width: 45vw;
   left: 50%;
   top: 10%;
@@ -1073,4 +1075,11 @@ div.screen {
   transform: translateX(-50%);
   display: inline-block;
   position: absolute;
+}
+
+.work-overlay {
+  background: rgba(0,0,0,0.3);
+  position: absolute;
+  width: 100%;
+  height: 100%;
 }

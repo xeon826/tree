@@ -7,7 +7,30 @@ $(document).ready(function() {
   lazyLoad();
   parallax();
   fadeServicesIn();
+  conversions();
 })
+function gtag_report_conversion(url) {
+  var callback = function () {
+    if (typeof(url) != 'undefined') {
+      window.location = url;
+    }
+  };
+  gtag('event', 'conversion', {
+      'send_to': 'AW-814837335/j50vCLeY2tcBENfcxYQD',
+      'event_callback': callback
+  });
+  return false;
+}
+function conversions() {
+
+  var navBtn = document.querySelector('[href="#contact"]');
+  navBtn.addEventListener('click', function(e) {
+    // gtag('event', 'conversion', {
+    //   'send_to': 'AW-814837335/j50vCLeY2tcBENfcxYQD'
+    // });
+    gtag_report_conversion('https://thejoshuatree.io/#contact');
+  })
+}
 
 function navigationTriggerScroll() {
   $('#services').click(function() {
@@ -24,12 +47,13 @@ function lazyLoad() {
         setTimeout(function() {
           $(obj).addClass('box--opaque');
         }, 500 * i)
-      $('.section__quote').each(function() {
+        $('.section__quote').each(function() {
           if ($(window).innerWidth() > 600) {
             $(this).css('background', $(this).data('background'));
           } else {
             $(this).css('background', $(this).data('srcset-background'));
-          }    })
+          }
+        })
       });
     })
   })
