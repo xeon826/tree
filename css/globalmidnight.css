@@ -270,7 +270,7 @@ html body [id*="popup"],
 
 html body [class*="note"],
 html body [class*="detail"],
-html body [class*="description"]
+/* html body [class*="description"] */
 
 {background-color: #232323 !important}
 
