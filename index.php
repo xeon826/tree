@@ -40,7 +40,7 @@
         <li><a class="navigation__link" href="#top">Home</a></li>
         <li><a class="navigation__link" href="#about">About</a></li>
         <li><a class="navigation__link" href="#services">Services</a></li>
-        <li class="logo"><a class="navigation__link logo__anchor" href="#"><img src="img/tree--white-blue.png"></a></li>
+        <li class="logo"><a class="navigation__link logo__anchor" href="#"><img src="img/tree--white-blue-logo.png"></a></li>
         <li><a class="navigation__link" href="#works">Works</a></li>
         <li><a class="navigation__link" href="#skills">Skills</a></li>
         <li><a class="navigation__link" href="#contact">Contact</a></li>
@@ -54,8 +54,8 @@
     <?php
     $boxes = [
       ['red', 'Front End Coder', 'The philosophy is simple. I place the concerns of your clients at the center of the user experience.'],
-      ['blue', 'SEO', 'When it comes to SEO, content is key. I can show you how to optimize your web pages to get the most user visibility possible.'],
-      ['green', 'Designer', 'With my skills in HTML, CSS, Javascript, Vue, and React I can create a web application that looks good on all screen sizes.'],
+      ['blue', 'Data Analysis', 'When it comes to data analysis, visualization is key. I can create graphical representations of data showing correlations and trends.'],
+      ['green', 'Designer', 'With my skills in Javascript, Vue, and React I can create a web application that looks good on all screen sizes.'],
       ['light-blue', 'Back End Coder', 'With my vast experience in back-end coding technologies such as Python, PHP, Postgres and MySQL, I can deliver a product that is unsurpassed.'],
     ];
     foreach ($boxes as $box) {
@@ -95,7 +95,7 @@
     <h2 class="section__header">Services / What I do</h2>
     <p class="section__paragraph">
       I provide the following services - web design, front-end web development, back-end system development and
-      integration, mobile application development and search engine optimization (SEO).
+      integration, mobile application development and data analysis.
     </p>
     <img class="foliage" src="img/tree-background.png">
     <span class="services-container">
@@ -123,10 +123,9 @@
       <div class="box box--seo box--blue services-container__box ">
         <div></div>
         <div></div>
-        <h3>SEO</h3>
+        <h3>Data Analaysis</h3>
         <p>
-          Search results play an essential role in how successful your business is. With my expertise, I can show you
-          how to optimize your content so that you can be sure you're getting the full potential of your web presence.
+          Data analysis plays an essential role in understanding trends and correlations. I can create efficient and readable graphical representations of API data using tools such as Pandas and Matplotlib.
         </p>
       </div>
       <div class="box box--back-end box--light-blue services-container__box ">
