@@ -1434,7 +1434,7 @@ div.screen {
 }
 
 #particles-js {
-  background-image: url('/img/hero.jpg')
+  /* background-image: url('/img/hero.jpg') */
 }
 
 .hover\:tw-blur-md:hover {
